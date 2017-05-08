@@ -1,0 +1,34 @@
+Starting NetworkExample2...
+Initialising...
+Topology file: topology.brite
+Starting CloudSim version 3.0
+Datacenter_0 is starting...
+Datacenter_1 is starting...
+Broker is starting...
+Entities started.
+0.0: Broker: Cloud Resource List received with 2 resource(s)
+10.0: Broker: Trying to Create VM #0 in Datacenter_0
+10.0: Broker: Trying to Create VM #1 in Datacenter_0
+17.900000190734865: Broker: VM #0 has been created in Datacenter #2, Host #0
+17.900000190734865: Broker: VM #1 has been created in Datacenter #2, Host #0
+17.900000190734865: Broker: Sending cloudlet 0 to VM #0
+17.900000190734865: Broker: Sending cloudlet 1 to VM #1
+185.70000038146972: Broker: Cloudlet 0 received
+185.70000038146972: Broker: Cloudlet 1 received
+185.70000038146972: Broker: All Cloudlets executed. Finishing...
+185.70000038146972: Broker: Destroying VM #0
+185.70000038146972: Broker: Destroying VM #1
+Broker is shutting down...
+Simulation: No more future events
+CloudInformationService: Notify all CloudSim entities for shutting down.
+Datacenter_0 is shutting down...
+Datacenter_1 is shutting down...
+Broker is shutting down...
+Simulation completed.
+Simulation completed.
+
+========== OUTPUT ==========
+Cloudlet ID    STATUS    Data center ID    VM ID    Time    Start Time    Finish Time
+    0        SUCCESS        2            0        160        21.8        181.8
+    1        SUCCESS        2            1        160        21.8        181.8
+NetworkExample2 finished!

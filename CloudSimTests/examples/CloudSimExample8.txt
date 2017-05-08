@@ -1,0 +1,118 @@
+Starting CloudSimExample8...
+Initialising...
+Starting CloudSim version 3.0
+GlobalBroker is starting...
+Datacenter_0 is starting...
+Datacenter_1 is starting...
+Broker_0 is starting...
+Entities started.
+0.0: Broker_0: Cloud Resource List received with 2 resource(s)
+0.0: Broker_0: Trying to Create VM #0 in Datacenter_0
+0.0: Broker_0: Trying to Create VM #1 in Datacenter_0
+0.0: Broker_0: Trying to Create VM #2 in Datacenter_0
+0.0: Broker_0: Trying to Create VM #3 in Datacenter_0
+0.0: Broker_0: Trying to Create VM #4 in Datacenter_0
+0.1: Broker_0: VM #0 has been created in Datacenter #3, Host #0
+0.1: Broker_0: VM #1 has been created in Datacenter #3, Host #0
+0.1: Broker_0: VM #2 has been created in Datacenter #3, Host #0
+0.1: Broker_0: VM #3 has been created in Datacenter #3, Host #1
+0.1: Broker_0: VM #4 has been created in Datacenter #3, Host #0
+0.1: Broker_0: Sending cloudlet 0 to VM #0
+0.1: Broker_0: Sending cloudlet 1 to VM #1
+0.1: Broker_0: Sending cloudlet 2 to VM #2
+0.1: Broker_0: Sending cloudlet 3 to VM #3
+0.1: Broker_0: Sending cloudlet 4 to VM #4
+0.1: Broker_0: Sending cloudlet 5 to VM #0
+0.1: Broker_0: Sending cloudlet 6 to VM #1
+0.1: Broker_0: Sending cloudlet 7 to VM #2
+0.1: Broker_0: Sending cloudlet 8 to VM #3
+0.1: Broker_0: Sending cloudlet 9 to VM #4
+Adding: GlobalBroker_
+GlobalBroker_ is starting...
+200.0: GlobalBroker_: Cloud Resource List received with 2 resource(s)
+200.0: GlobalBroker_: Trying to Create VM #100 in Datacenter_0
+200.0: GlobalBroker_: Trying to Create VM #101 in Datacenter_0
+200.0: GlobalBroker_: Trying to Create VM #102 in Datacenter_0
+200.0: GlobalBroker_: Trying to Create VM #103 in Datacenter_0
+200.0: GlobalBroker_: Trying to Create VM #104 in Datacenter_0
+200.1: GlobalBroker_: VM #100 has been created in Datacenter #3, Host #1
+200.1: GlobalBroker_: VM #101 has been created in Datacenter #3, Host #0
+200.1: GlobalBroker_: VM #102 has been created in Datacenter #3, Host #1
+200.1: GlobalBroker_: VM #103 has been created in Datacenter #3, Host #0
+200.1: GlobalBroker_: VM #104 has been created in Datacenter #3, Host #1
+200.1: GlobalBroker_: Sending cloudlet 100 to VM #100
+200.1: GlobalBroker_: Sending cloudlet 101 to VM #101
+200.1: GlobalBroker_: Sending cloudlet 102 to VM #102
+200.1: GlobalBroker_: Sending cloudlet 103 to VM #103
+200.1: GlobalBroker_: Sending cloudlet 104 to VM #104
+200.1: GlobalBroker_: Sending cloudlet 105 to VM #100
+200.1: GlobalBroker_: Sending cloudlet 106 to VM #101
+200.1: GlobalBroker_: Sending cloudlet 107 to VM #102
+200.1: GlobalBroker_: Sending cloudlet 108 to VM #103
+200.1: GlobalBroker_: Sending cloudlet 109 to VM #104
+320.1: Broker_0: Cloudlet 0 received
+320.1: Broker_0: Cloudlet 5 received
+320.1: Broker_0: Cloudlet 1 received
+320.1: Broker_0: Cloudlet 6 received
+320.1: Broker_0: Cloudlet 2 received
+320.1: Broker_0: Cloudlet 7 received
+320.1: Broker_0: Cloudlet 4 received
+320.1: Broker_0: Cloudlet 9 received
+320.1: Broker_0: Cloudlet 3 received
+320.1: Broker_0: Cloudlet 8 received
+320.1: Broker_0: All Cloudlets executed. Finishing...
+320.1: Broker_0: Destroying VM #0
+320.1: Broker_0: Destroying VM #1
+320.1: Broker_0: Destroying VM #2
+320.1: Broker_0: Destroying VM #3
+320.1: Broker_0: Destroying VM #4
+Broker_0 is shutting down...
+520.1: GlobalBroker_: Cloudlet 101 received
+520.1: GlobalBroker_: Cloudlet 106 received
+520.1: GlobalBroker_: Cloudlet 103 received
+520.1: GlobalBroker_: Cloudlet 108 received
+520.1: GlobalBroker_: Cloudlet 100 received
+520.1: GlobalBroker_: Cloudlet 105 received
+520.1: GlobalBroker_: Cloudlet 102 received
+520.1: GlobalBroker_: Cloudlet 107 received
+520.1: GlobalBroker_: Cloudlet 104 received
+520.1: GlobalBroker_: Cloudlet 109 received
+520.1: GlobalBroker_: All Cloudlets executed. Finishing...
+520.1: GlobalBroker_: Destroying VM #100
+520.1: GlobalBroker_: Destroying VM #101
+520.1: GlobalBroker_: Destroying VM #102
+520.1: GlobalBroker_: Destroying VM #103
+520.1: GlobalBroker_: Destroying VM #104
+GlobalBroker_ is shutting down...
+Simulation: No more future events
+CloudInformationService: Notify all CloudSim entities for shutting down.
+Datacenter_0 is shutting down...
+Datacenter_1 is shutting down...
+Broker_0 is shutting down...
+GlobalBroker_ is shutting down...
+Simulation completed.
+Simulation completed.
+
+========== OUTPUT ==========
+Cloudlet ID    STATUS    Data center ID    VM ID        Time    Start Time    Finish Time
+    0        SUCCESS        3            0            320        0.1            320.1
+    5        SUCCESS        3            0            320        0.1            320.1
+    1        SUCCESS        3            1            320        0.1            320.1
+    6        SUCCESS        3            1            320        0.1            320.1
+    2        SUCCESS        3            2            320        0.1            320.1
+    7        SUCCESS        3            2            320        0.1            320.1
+    4        SUCCESS        3            4            320        0.1            320.1
+    9        SUCCESS        3            4            320        0.1            320.1
+    3        SUCCESS        3            3            320        0.1            320.1
+    8        SUCCESS        3            3            320        0.1            320.1
+    101        SUCCESS        3            101            320        200.1            520.1
+    106        SUCCESS        3            101            320        200.1            520.1
+    103        SUCCESS        3            103            320        200.1            520.1
+    108        SUCCESS        3            103            320        200.1            520.1
+    100        SUCCESS        3            100            320        200.1            520.1
+    105        SUCCESS        3            100            320        200.1            520.1
+    102        SUCCESS        3            102            320        200.1            520.1
+    107        SUCCESS        3            102            320        200.1            520.1
+    104        SUCCESS        3            104            320        200.1            520.1
+    109        SUCCESS        3            104            320        200.1            520.1
+CloudSimExample8 finished!
