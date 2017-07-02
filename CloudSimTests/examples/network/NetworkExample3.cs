@@ -122,7 +122,7 @@ namespace org.cloudbus.cloudsim.examples.network
 
             //Sixth step: configure network
             //load the network topology file
-            await NetworkTopology.buildNetworkTopology(@".\examples\network\topology.brite");
+            await NetworkTopology.buildNetworkTopology(@".\resources\topology.brite");
 
             //maps CloudSim entities to BRITE entities
             //Datacenter0 will correspond to BRITE node 0
@@ -173,8 +173,8 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(testCloudlet1.CloudletId, 0);
             Assert.AreEqual(testCloudlet1.ResourceId, 3);
             Assert.AreEqual(testCloudlet1.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ActualCPUTime - 160) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ExecStartTime - 33) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.SubmissionTime - 33) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet1.FinishTime - 193) <= 0.01);
 
             var testCloudlet2 = newList2[0];
@@ -183,8 +183,8 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(testCloudlet2.CloudletId, 0);
             Assert.AreEqual(testCloudlet2.ResourceId, 2);
             Assert.AreEqual(testCloudlet2.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet2.ActualCPUTime - 160) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet2.ExecStartTime - 17.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet2.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet2.SubmissionTime - 17.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet2.FinishTime - 177.1) <= 0.01);
         }
 

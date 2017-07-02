@@ -57,7 +57,8 @@ namespace org.cloudbus.cloudsim.network
             var fileSize = graphFile.Length;
             var graphBuffer = new byte[fileSize];
             var bytesRead = await graphFile.ReadAsync(graphBuffer, 0, (int)fileSize); //.ReadAllTextAsync();
-            string graphString = Encoding.Unicode.GetString(graphBuffer, 0, bytesRead);
+            //string graphString = Encoding.Unicode.GetString(graphBuffer, 0, bytesRead);
+            string graphString = Encoding.UTF8.GetString(graphBuffer, 0, bytesRead);
             using (StringReader sr = new StringReader(graphString))
             {
                 string lineSep = Environment.NewLine; // System.getProperty("line.separator");
