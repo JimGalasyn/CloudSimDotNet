@@ -11,10 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="resources\LCG.swf" />
     <None Remove="resources\topology.brite" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="resources\LCG.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\topology.brite">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -47,6 +51,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="resources\LCG.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

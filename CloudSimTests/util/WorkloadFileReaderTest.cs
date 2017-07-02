@@ -51,9 +51,10 @@ namespace org.cloudbus.cloudsim.util
         {
 
             //WorkloadModel r = new WorkloadFileReader("src" + File.separator + "test" + File.separator + "LCG.swf.gz", 1);
-            WorkloadModel r = new WorkloadFileReader("src" + Path.DirectorySeparatorChar + "test" + Path.DirectorySeparatorChar + "LCG.swf.gz", 1);
+            //WorkloadModel r = new WorkloadFileReader("src" + Path.DirectorySeparatorChar + "test" + Path.DirectorySeparatorChar + "LCG.swf.gz", 1);
+            WorkloadModel r = new WorkloadFileReader(@".\resources\LCG.swf", 1);
             IList<Cloudlet> cloudletlist = r.generateWorkload();
-            Assert.Equals(188041, cloudletlist.Count);
+            Assert.AreEqual(188041, cloudletlist.Count);
 
             foreach (Cloudlet cloudlet in cloudletlist)
             {

@@ -173,7 +173,7 @@ namespace org.cloudbus.cloudsim.util
             }
 
             // TODO: I think this means physical file system File, i.e., like in System.IO.
-            //file = new File(fileName);
+            file = new File(fileName,1);
             //if (!file.exists())
             //{
             //    throw new FileNotFoundException("Workload trace " + fileName + " does not exist");
@@ -186,7 +186,7 @@ namespace org.cloudbus.cloudsim.util
         /// Reads job information from a trace file and generates the respective cloudlets.
         /// </summary>
         /// <returns> the list of cloudlets read from the file; <code>null</code> in case of failure. </returns>
-        /// <seealso cref= #file </seealso>
+        /// <seealso cref="file"</seealso>
         public virtual List<Cloudlet> generateWorkload()
         {
             if (jobs == null)
@@ -487,7 +487,7 @@ namespace org.cloudbus.cloudsim.util
         //ORIGINAL LINE: final String[] sp = line.split("\\s+");
         //string[] sp = line.Split("\\s+", true); // split the fields based on a space
         // TODO: Correct delimiter?
-        string[] sp = line.Split(' ');
+        string[] sp = line.Split( new char[]{ ' '}, StringSplitOptions.RemoveEmptyEntries);
         int len = 0; // length of a string
         int index = 0; // the index of an array
 
@@ -528,7 +528,7 @@ namespace org.cloudbus.cloudsim.util
         try
         {
                 // TODO: Fix this IO stream stuff.
-                reader = null; //new System.IO.StreamReader(new System.IO.FileStream(fl, System.IO.FileMode.Open, System.IO.FileAccess.Read));
+                reader = new System.IO.StreamReader(new System.IO.FileStream(fl.Name, System.IO.FileMode.Open, System.IO.FileAccess.Read));
 
             // read one line at the time
             int line = 1;
