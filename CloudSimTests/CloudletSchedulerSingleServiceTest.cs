@@ -196,8 +196,7 @@ namespace org.cloudbus.cloudsim
             //testGetEstimatedFinishTime(utilizationModel);
             //verify(utilizationModel);
         }
-
-        [TestMethod]
+        
         public virtual void testGetEstimatedFinishTime(UtilizationModel utilizationModel)
         {
             Cloudlet cloudlet = new Cloudlet(0, CLOUDLET_LENGTH, PES_NUMBER, CLOUDLET_FILE_SIZE, CLOUDLET_OUTPUT_SIZE, utilizationModel, utilizationModel, utilizationModel);
@@ -251,8 +250,7 @@ namespace org.cloudbus.cloudsim
             //testCloudletSubmit(utilizationModel);
             //verify(utilizationModel);
         }
-
-        [TestMethod]
+        
         public virtual void testCloudletSubmit(UtilizationModel utilizationModel)
         {
             Cloudlet cloudlet = new Cloudlet(0, CLOUDLET_LENGTH, PES_NUMBER, CLOUDLET_FILE_SIZE, CLOUDLET_OUTPUT_SIZE, utilizationModel, utilizationModel, utilizationModel);
@@ -321,8 +319,7 @@ namespace org.cloudbus.cloudsim
             //testUpdateVmProcessing(utilizationModel);
             //verify(utilizationModel);
         }
-
-        [TestMethod]
+        
         public virtual void testUpdateVmProcessing(UtilizationModel utilizationModel)
         {
             Cloudlet cloudlet = new Cloudlet(0, CLOUDLET_LENGTH, PES_NUMBER, CLOUDLET_FILE_SIZE, CLOUDLET_OUTPUT_SIZE, utilizationModel, utilizationModel, utilizationModel);
