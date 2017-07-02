@@ -136,8 +136,8 @@ namespace org.cloudbus.cloudsim.examples
             Assert.AreEqual(testCloudlet1.CloudletId, 0);
             Assert.AreEqual(testCloudlet1.ResourceId, 2);
             Assert.AreEqual(testCloudlet1.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ActualCPUTime - 1000) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ExecStartTime - 0.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.WallClockTime - 1000) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.SubmissionTime - 0.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet1.FinishTime - 1000.1) <= 0.01);
 
             var testCloudlet2 = newList[1];
@@ -145,8 +145,8 @@ namespace org.cloudbus.cloudsim.examples
             Assert.AreEqual(testCloudlet2.CloudletId, 1);
             Assert.AreEqual(testCloudlet2.ResourceId, 2);
             Assert.AreEqual(testCloudlet2.VmId, 1);
-            Assert.IsTrue(Math.Abs(testCloudlet2.ActualCPUTime - 1000) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet2.ExecStartTime - 0.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet2.WallClockTime - 1000) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet2.SubmissionTime - 0.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet2.FinishTime - 1000.1) <= 0.01);
         }
 

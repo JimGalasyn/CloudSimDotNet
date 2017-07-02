@@ -621,9 +621,10 @@ namespace org.cloudbus.cloudsim.core
 				}
 			}
 
-			// If there are more future events then deal with them
-			if (future.size() > 0)
-			{
+            // If there are more future events then deal with them
+            //if (future.size() > 0)
+            if(future.Count > 0)
+            {
 				IList<SimEvent> toRemove = new List<SimEvent>();
                 IEnumerator<SimEvent> fit = future.iterator();
                 queue_empty = false;
@@ -840,7 +841,7 @@ namespace org.cloudbus.cloudsim.core
                     //JAVA TO C# CONVERTER TODO TASK: .NET enumerators are read-only:
                     // TEST: (fixed) Does this work?
                     //iter.remove();
-                    future.Remove(iter.Current);
+                    future.remove(iter.Current);
                     break;
 				}
 			}
@@ -868,7 +869,7 @@ namespace org.cloudbus.cloudsim.core
                     //JAVA TO C# CONVERTER TODO TASK: .NET enumerators are read-only:
                     // TEST: (fixed) Does this work?
                     //iter.remove();
-                    future.Remove(iter.Current);
+                    future.remove(iter.Current);
 
                 }
 			}

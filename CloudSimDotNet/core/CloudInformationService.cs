@@ -347,9 +347,10 @@ namespace org.cloudbus.cloudsim.core
 		/// @post $none </param>
 		protected internal virtual void signalShutdown(ICollection<int?> list)
 		{
-			// checks whether a list is empty or not
-			if (list == null)
-			{
+            // checks whether a list is empty or not
+            //if (list == null)
+            if(list == null || list.Count == 0)
+            {
 				return;
 			}
 

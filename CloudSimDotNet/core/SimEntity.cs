@@ -447,13 +447,13 @@ namespace org.cloudbus.cloudsim.core
 		/// </summary>
 		public abstract void shutdownEntity();
 
-			/// <summary>
-			/// The run loop to process events fired during the simulation.
-			/// The events that will be processed are defined
-			/// in the <seealso cref="#processEvent(org.cloudbus.cloudsim.core.SimEvent)"/> method.
-			/// </summary>
-			/// <seealso cref= #processEvent(org.cloudbus.cloudsim.core.SimEvent)  </seealso>
-		public virtual void run()
+        /// <summary>
+        /// The run loop to process events fired during the simulation.
+        /// The events that will be processed are defined
+        /// in the <seealso cref="processEvent(org.cloudbus.cloudsim.core.SimEvent)"/> method.
+        /// </summary>
+        /// <seealso cref= "processEvent(org.cloudbus.cloudsim.core.SimEvent)"/>
+        public virtual void run()
 		{
 			SimEvent ev = evbuf != null ? evbuf : NextEvent;
 

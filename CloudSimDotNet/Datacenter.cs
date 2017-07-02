@@ -1172,7 +1172,7 @@ namespace org.cloudbus.cloudsim
         {
 			get
 			{
-				return (IList<Host>) Characteristics.HostListProperty;
+				return Characteristics.HostListProperty;
 			}
 		}
 
