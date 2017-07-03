@@ -259,31 +259,41 @@ namespace org.cloudbus.cloudsim
 		/// <summary>
 		/// Calculates the delay between two nodes.
 		/// </summary>
-		/// <param name="srcID"> ID of the CloudSim entity that represents the link's source node </param>
-		/// <param name="destID"> ID of the CloudSim entity that represents the link's destination node </param>
+		/// <param name="srcID"> ID of the CloudSim entity that represents the link's source node.</param>
+		/// <param name="destID"> ID of the CloudSim entity that represents the link's destination node.</param>
 		/// <returns> communication delay between the two nodes
 		/// @pre srcID >= 0
 		/// @pre destID >= 0
 		/// @post $none </returns>
 		public static double getDelay(int srcID, int destID)
 		{
-			if (networkEnabled)
-			{
-				try
-				{
-					// add the network latency
-					double delay = delayMatrix.getDelay(map[srcID].Value, map[destID].Value);
+            double delay = 0;
 
-					return delay;
-				}
-				catch (Exception ex)
-				{
-                    // in case of error, just keep running and return 0.0
-                    // TODO: This seems to be by design -- convert to using map.ContainsKey.
-                    //Debug.WriteLine(ex.ToString());
+            if(networkEnabled)
+            {
+                if(map.ContainsKey(srcID) && map.ContainsKey(destID))
+                {
+                    delay = delayMatrix.getDelay(
+                        map[srcID].Value,
+                        map[destID].Value);
                 }
+
+                //try
+                //{
+                //	// add the network latency
+                //	double delay = delayMatrix.getDelay(map[srcID].Value, map[destID].Value);
+
+                //	return delay;
+                //}
+                //catch (Exception ex)
+                //{
+                //                // in case of error, just keep running and return 0.0
+                //                // JimG: This seems to be by design -- convert to using map.ContainsKey.
+                //                //Debug.WriteLine(ex.ToString());
+                //            }
             }
-			return 0.0;
+
+			return delay;
 		}
 
 		/// <summary>
