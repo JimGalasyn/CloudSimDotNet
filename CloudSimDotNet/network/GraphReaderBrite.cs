@@ -65,7 +65,8 @@ namespace org.cloudbus.cloudsim.network
                 string nextLine = null;
                 StringBuilder sb = new StringBuilder();
 
-                while (!string.ReferenceEquals((nextLine = sr.ReadLine()), null))
+                //while (!string.ReferenceEquals((nextLine = sr.ReadLine()), null))
+                while((nextLine = sr.ReadLine()) != null)
                 {
                     sb.Append(nextLine);
                     //
@@ -98,11 +99,12 @@ namespace org.cloudbus.cloudsim.network
                         parseEdgesString(nextLine);
                     }
                 }
+
+                Log.printLine(sb.ToString());
             }
 
 			Log.printLine("read file successfully...");
-			//Log.printLine(sb.ToString());
-
+			
 			return graph;
 		}
 
