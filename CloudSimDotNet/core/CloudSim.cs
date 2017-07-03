@@ -253,7 +253,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> true, if successful; false otherwise. </returns>
 		public static bool terminateSimulation()
 		{
-			running_Renamed = false;
+			isRunning = false;
 			printMessage("Simulation: Reached termination time.");
 			return true;
 		}
@@ -265,7 +265,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> true, if successful otherwise. </returns>
 		public static bool terminateSimulation(double time)
 		{
-			if (time <= clock_Renamed)
+			if (time <= clockValue)
 			{
 				return false;
 			}
@@ -365,13 +365,11 @@ namespace org.cloudbus.cloudsim.core
 		/// <summary>
 		/// The current simulation clock.
 		/// </summary>
-//JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		private static double clock_Renamed;
+		private static double clockValue;
 
 		/// <summary>
 		/// Flag for checking if the simulation is running. </summary>
-//JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		private static bool running_Renamed;
+		private static bool isRunning;
 
 		/// <summary>
 		/// The entities by name. </summary>
@@ -407,8 +405,8 @@ namespace org.cloudbus.cloudsim.core
             future = new FutureQueue();
 			deferred = new DeferredQueue();
 			waitPredicates = new Dictionary<int?, Predicate>();
-			clock_Renamed = 0;
-			running_Renamed = false;
+			clockValue = 0;
+			isRunning = false;
 		}
 
 		// The two standard predicates
@@ -429,7 +427,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the simulation time </returns>
 		public static double clock()
 		{
-			return clock_Renamed;
+			return clockValue;
 		}
 
 		/// <summary>
@@ -554,10 +552,10 @@ namespace org.cloudbus.cloudsim.core
 		public static void addEntity(SimEntity e)
 		{
 			SimEvent evt;
-			if (running_Renamed)
+			if (isRunning)
 			{
 				// Post an simEvent to make this entity
-				evt = new SimEvent(SimEvent.CREATE, clock_Renamed, 1, 0, 0, e);
+				evt = new SimEvent(SimEvent.CREATE, clockValue, 1, 0, 0, e);
 				future.addEvent(evt);
 			}
 			if (e.Id == -1)
@@ -652,7 +650,7 @@ namespace org.cloudbus.cloudsim.core
 			else
 			{
 				queue_empty = true;
-				running_Renamed = false;
+				isRunning = false;
 				printMessage("Simulation: No more future events");
 			}
 
@@ -674,7 +672,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="delay"> the delay </param>
 		public static void hold(int src, long delay)
 		{
-			SimEvent e = new SimEvent(SimEvent.HOLD_DONE, clock_Renamed + delay, src);
+			SimEvent e = new SimEvent(SimEvent.HOLD_DONE, clockValue + delay, src);
 			future.addEvent(e);
 			entities[src].State = SimEntity.HOLDING;
 		}
@@ -686,7 +684,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="delay"> the delay </param>
 		public static void pause(int src, double delay)
 		{
-			SimEvent e = new SimEvent(SimEvent.HOLD_DONE, clock_Renamed + delay, src);
+			SimEvent e = new SimEvent(SimEvent.HOLD_DONE, clockValue + delay, src);
 			future.addEvent(e);
 			entities[src].State = SimEntity.HOLDING;
 		}
@@ -706,7 +704,7 @@ namespace org.cloudbus.cloudsim.core
 				throw new System.ArgumentException("Send delay can't be negative.");
 			}
 
-			SimEvent e = new SimEvent(SimEvent.SEND, clock_Renamed + delay, src, dest, tag, data);
+			SimEvent e = new SimEvent(SimEvent.SEND, clockValue + delay, src, dest, tag, data);
 			future.addEvent(e);
 		}
 
@@ -725,7 +723,7 @@ namespace org.cloudbus.cloudsim.core
 				throw new System.ArgumentException("Send delay can't be negative.");
 			}
 
-			SimEvent e = new SimEvent(SimEvent.SEND, clock_Renamed + delay, src, dest, tag, data);
+			SimEvent e = new SimEvent(SimEvent.SEND, clockValue + delay, src, dest, tag, data);
 			future.addEventFirst(e);
 		}
 
@@ -879,11 +877,11 @@ namespace org.cloudbus.cloudsim.core
 			int dest, src;
 			SimEntity dest_ent;
 			// Update the system's clock
-			if (e.eventTime() < clock_Renamed)
+			if (e.eventTime() < clockValue)
 			{
 				throw new System.ArgumentException("Past simEvent detected.");
 			}
-			clock_Renamed = e.eventTime();
+			clockValue = e.eventTime();
 
 			// Ok now process it
 			switch (e.Type)
@@ -952,7 +950,7 @@ namespace org.cloudbus.cloudsim.core
 		/// </summary>
 		public static void runStart()
 		{
-			running_Renamed = true;
+			isRunning = true;
 			// Start all the entities
 			foreach (SimEntity ent in entities)
 			{
@@ -962,15 +960,18 @@ namespace org.cloudbus.cloudsim.core
 			printMessage("Entities started.");
 		}
 
-		/// <summary>
-		/// Check if the simulation is still running. This method should be used by entities to check if
-		/// they should continue executing.
-		/// </summary>
-		/// <returns> if the simulation is still running, otherwise </returns>
-		public static bool running()
-		{
-			return running_Renamed;
-		}
+        /// <summary>
+        /// Check if the simulation is still running. This property should be used by entities to check if
+        /// they should continue executing.
+        /// </summary>
+        /// <returns>true if the simulation is still running, otherwise false.</returns>
+        public static bool Running
+        {
+            get
+            {
+                return isRunning;
+            }
+        }
 
 		/// <summary>
 		/// This method is called if one wants to pause the simulation.
@@ -989,7 +990,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> true, if successful otherwise. </returns>
 		public static bool pauseSimulation(long time)
 		{
-			if (time <= clock_Renamed)
+			if (time <= clockValue)
 			{
 				return false;
 			}
@@ -1008,7 +1009,7 @@ namespace org.cloudbus.cloudsim.core
 		{
 			paused = false;
 
-			if (pauseAt <= clock_Renamed)
+			if (pauseAt <= clockValue)
 			{
 				pauseAt = -1;
 			}
@@ -1023,7 +1024,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the last clock value </returns>
 		public static double run()
 		{
-			if (!running_Renamed)
+			if (!isRunning)
 			{
 				runStart();
 			}
@@ -1039,19 +1040,19 @@ namespace org.cloudbus.cloudsim.core
 				}
 
 				// this block allows termination of simulation at a specific time
-				if (terminateAt > 0.0 && clock_Renamed >= terminateAt)
+				if (terminateAt > 0.0 && clockValue >= terminateAt)
 				{
 					terminateSimulation();
-					clock_Renamed = terminateAt;
+					clockValue = terminateAt;
 					break;
 				}
 
                 // TODO: This iterator biz won't work.
-                //if (pauseAt != -1 && ((future.size() > 0 && clock_Renamed <= pauseAt && pauseAt <= future.GetEnumerator().next().eventTime()) || future.size() == 0 && pauseAt <= clock_Renamed))                
-                if (pauseAt != -1 && ((future.size() > 0 && clock_Renamed <= pauseAt && pauseAt <= futureEnumerator.Current.eventTime()) || future.size() == 0 && pauseAt <= clock_Renamed))
+                //if (pauseAt != -1 && ((future.size() > 0 && clockValue <= pauseAt && pauseAt <= future.GetEnumerator().next().eventTime()) || future.size() == 0 && pauseAt <= clockValue))                
+                if (pauseAt != -1 && ((future.size() > 0 && clockValue <= pauseAt && pauseAt <= futureEnumerator.Current.eventTime()) || future.size() == 0 && pauseAt <= clockValue))
                 {
 					pauseSimulation();
-					clock_Renamed = pauseAt;
+					clockValue = pauseAt;
 				}
 
 				while (paused)
@@ -1106,8 +1107,8 @@ namespace org.cloudbus.cloudsim.core
 			entitiesByName = null;
 			future = null;
 			deferred = null;
-			clock_Renamed = 0L;
-			running_Renamed = false;
+			clockValue = 0L;
+			isRunning = false;
 
 			waitPredicates = null;
 			paused = false;

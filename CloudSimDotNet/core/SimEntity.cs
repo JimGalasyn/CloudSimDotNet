@@ -114,7 +114,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="data"> The data to be sent with the event. </param>
 		public virtual void schedule(int dest, double delay, int tag, object data)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -215,7 +215,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="data"> The data to be sent with the event. </param>
 		public virtual void scheduleFirst(int dest, double delay, int tag, object data)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -318,7 +318,7 @@ namespace org.cloudbus.cloudsim.core
 			{
 				throw new System.ArgumentException("Negative delay supplied.");
 			}
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -351,7 +351,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the simulation event </returns>
 		public virtual SimEvent selectEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -366,7 +366,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> The number of events cancelled (0 or 1) </returns>
 		public virtual SimEvent cancelEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -382,7 +382,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the simulation event </returns>
 		public virtual SimEvent getNextEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -400,7 +400,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="p"> The predicate to match </param>
 		public virtual void waitForEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}

@@ -452,7 +452,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 							migrate["vm"] = previousVm;
 							migrate["host"] = previousHost;
 							newMigrationMap.Add(migrate);
-
 						}
 					}
 

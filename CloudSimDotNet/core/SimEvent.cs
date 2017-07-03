@@ -31,8 +31,7 @@ namespace org.cloudbus.cloudsim.core
 
 		/// <summary>
 		/// Time that the event was removed from the queue to start service. * </summary>
-//JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		private double endWaitingTime_Renamed;
+		private double endWaitingTimeValue;
 
 		/// <summary>
 		/// Id of entity who scheduled the event. * </summary>
@@ -82,7 +81,7 @@ namespace org.cloudbus.cloudsim.core
 		{
 			etype = ENULL;
 			time = -1L;
-			endWaitingTime_Renamed = -1.0;
+			endWaitingTimeValue = -1.0;
 			entSrc = -1;
 			entDst = -1;
 			tag = -1;
@@ -119,14 +118,18 @@ namespace org.cloudbus.cloudsim.core
 		}
 
 		/// <summary>
-		/// Sets the time that the event was removed from the queue to start service. 
+		/// Gets or sets the time that the event was removed from the queue to start service. 
 		/// </summary>
 		/// <param name="end_waiting_time"> </param>
-		protected internal virtual double EndWaitingTime
+		public virtual double EndWaitingTime
 		{
-			set
+            get
+            {
+                return endWaitingTimeValue;
+            }
+			internal set
 			{
-				endWaitingTime_Renamed = value;
+				endWaitingTimeValue = value;
 			}
 		}
 
@@ -224,10 +227,10 @@ namespace org.cloudbus.cloudsim.core
 		/// Get the simulation time that this event was removed from the queue for service.
 		/// </summary>
 		/// <returns> The simulation time </returns>
-		public virtual double endWaitingTime()
-		{
-			return endWaitingTime_Renamed;
-		}
+		//public virtual double endWaitingTime()
+		//{
+		//	return endWaitingTime_Renamed;
+		//}
 
 		/// <summary>
 		/// Get the user-defined tag of this event

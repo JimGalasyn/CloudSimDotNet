@@ -696,9 +696,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ContainerVm> java.util.List<T> getVmList()
-        //public virtual IList<T> getVmList<T>() where T : ContainerVm
         public virtual IList<ContainerVm> VmListProperty
         {
 			get
