@@ -52,8 +52,6 @@ namespace org.cloudbus.cloudsim.container.utils
 		/// </summary>
 		/// <param name="clazz"> - the class of the object to get an id for. Must not be null. </param>
 		/// <returns> a valid id for the specified class. </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public static synchronized int pollId(final Class clazz)
 		public static int pollId(Type clazz)
 		{
 			lock (typeof(IDs))
@@ -91,7 +89,6 @@ namespace org.cloudbus.cloudsim.container.utils
         
 				if (result < 0)
 				{
-//JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
 					throw new System.InvalidOperationException("The generated id for class:" + clazz.FullName + " is negative. Possible integer overflow.");
 				}
         

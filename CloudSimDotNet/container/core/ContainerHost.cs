@@ -47,18 +47,11 @@ namespace org.cloudbus.cloudsim.container.core
 		/// <summary>
 		/// The vm list.
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<? extends ContainerVm> vmList = new java.util.ArrayList<>();
 		private readonly IList<ContainerVm> vmList = new List<ContainerVm>();
-		/// <summary>
-		/// The vm list.
-		/// </summary>
 
 		/// <summary>
 		/// The pe list.
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe> peList;
 		private IList<ContainerVmPe> peList;
 
 		/// <summary>
@@ -70,6 +63,7 @@ namespace org.cloudbus.cloudsim.container.core
 		/// The vms migrating in.
 		/// </summary>
 		private readonly IList<ContainerVm> vmsMigratingIn = new List<ContainerVm>();
+
 		/// <summary>
 		/// The datacenter where the host is placed.
 		/// </summary>
@@ -577,9 +571,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the pe list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe> java.util.List<T> getPeList()
-        //public virtual IList<T> getPeList<T>() where T : org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe
         public virtual IList<ContainerVmPe> PeListProperty
         {
 			get
@@ -598,9 +589,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ContainerVm> java.util.List<T> getVmList()
-        //public virtual IList<T> getVmList<T>() where T : ContainerVm
         public virtual IList<ContainerVm> VmListProperty
         {
 			get

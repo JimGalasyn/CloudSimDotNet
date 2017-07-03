@@ -50,8 +50,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// <param name="vmm">                the vmm </param>
 		/// <param name="containerScheduler"> the cloudlet scheduler </param>
 		/// <param name="schedulingInterval"> the scheduling interval </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerContainerVm(final int id, final int userId, final double mips, final float ram, final long bw, final long size, final String vmm, final org.cloudbus.cloudsim.container.schedulers.ContainerScheduler containerScheduler, final org.cloudbus.cloudsim.container.containerProvisioners.ContainerRamProvisioner containerRamProvisioner, final org.cloudbus.cloudsim.container.containerProvisioners.ContainerBwProvisioner containerBwProvisioner, java.util.List<? extends org.cloudbus.cloudsim.container.containerProvisioners.ContainerPe> peList, final double schedulingInterval)
 		public PowerContainerVm(int id, int userId, double mips, float ram, long bw, long size, string vmm, ContainerScheduler containerScheduler, ContainerRamProvisioner containerRamProvisioner, ContainerBwProvisioner containerBwProvisioner, IList<ContainerPe> peList, double schedulingInterval) : base(id, userId, mips, ram, bw, size, vmm, containerScheduler, containerRamProvisioner, containerBwProvisioner, peList)
 		{
 			SchedulingInterval = schedulingInterval;
@@ -66,12 +64,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// no next events
 		/// @pre currentTime >= 0
 		/// @post $none </returns>
-
-
-
-
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public double updateVmProcessing(final double currentTime, final java.util.List<Nullable<double>> mipsShare)
 		public override double updateVmProcessing(double currentTime, IList<double?> mipsShare)
 		{
 			double time = base.updateVmProcessing(currentTime, mipsShare);
@@ -184,8 +176,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// Adds the utilization history value.
 		/// </summary>
 		/// <param name="utilization"> the utilization </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void addUtilizationHistoryValue(final double utilization)
 		public virtual void addUtilizationHistoryValue(double utilization)
 		{
 			UtilizationHistory.Insert(0, utilization);

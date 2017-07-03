@@ -33,33 +33,23 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The list of VMs submitted to be managed by the broker. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends Vm> vmList;
 		protected internal IList<Vm> vmList;
 
 		/// <summary>
 		/// The list of VMs created by the broker. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends Vm> vmsCreatedList;
 		protected internal IList<Vm> vmsCreatedList;
 
 		/// <summary>
 		/// The list of cloudlet submitted to the broker. </summary>
 		/// <seealso cref= #submitCloudletList(java.util.List)  </seealso>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends Cloudlet> cloudletList;
 		protected internal IList<Cloudlet> cloudletList;
 
 		/// <summary>
 		/// The list of submitted cloudlets. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends Cloudlet> cloudletSubmittedList;
 		protected internal IList<Cloudlet> cloudletSubmittedList;
 
 		/// <summary>
 		/// The list of received cloudlet. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends Cloudlet> cloudletReceivedList;
 		protected internal IList<Cloudlet> cloudletReceivedList;
 
 		/// <summary>
@@ -107,8 +97,6 @@ namespace org.cloudbus.cloudsim
 		/// <exception cref="Exception"> the exception
 		/// @pre name != null
 		/// @post $none </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public DatacenterBroker(String name) throws Exception
 		public DatacenterBroker(string name) : base(name)
 		{
 
@@ -478,9 +466,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Vm> java.util.List<T> getVmList()
-        //public virtual IList<T> getVmList<T>() where T : Vm
         public virtual IList<Vm> VmListProperty
         {
 			get
@@ -499,9 +484,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Cloudlet> java.util.List<T> getCloudletList()
-        //public virtual IList<T> getCloudletList<T>() where T : Cloudlet
         public virtual IList<Cloudlet> CloudletListProperty
         {
 			get
@@ -520,9 +502,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet submitted list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Cloudlet> java.util.List<T> getCloudletSubmittedList()
-        //public virtual IList<T> getCloudletSubmittedList<T>() where T : Cloudlet
         public virtual IList<Cloudlet> CloudletSubmittedListProperty
         {
 			get
@@ -541,9 +520,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet received list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Cloudlet> java.util.List<T> getCloudletReceivedList()
-        //public virtual IList<T> getCloudletReceivedList<T>() where T : Cloudlet
         public virtual IList<Cloudlet> CloudletReceivedListProperty
         {
 			get
@@ -562,9 +538,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Vm> java.util.List<T> getVmsCreatedList()
-        //public virtual IList<T> getVmsCreatedList<T>() where T : Vm
         public virtual IList<Vm> VmsCreatedListProperty
         {
 			get

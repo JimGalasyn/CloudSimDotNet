@@ -27,8 +27,6 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The host list. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends Host> hostList;
 		private IList<Host> hostList;
 
 		/// <summary>

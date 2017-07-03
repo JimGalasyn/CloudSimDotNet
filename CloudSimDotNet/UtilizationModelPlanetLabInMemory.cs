@@ -27,8 +27,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="schedulingInterval"> </param>
 		/// <exception cref="NumberFormatException"> the number format exception </exception>
 		/// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UtilizationModelPlanetLabInMemory(String inputPath, double schedulingInterval) throws NumberFormatException, java.io.IOException
 		public UtilizationModelPlanetLabInMemory(string inputPath, double schedulingInterval)
 		{
 			data = new double[289];
@@ -52,8 +50,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="dataSamples"> number of samples in the file </param>
 		/// <exception cref="NumberFormatException"> the number format exception </exception>
 		/// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public UtilizationModelPlanetLabInMemory(String inputPath, double schedulingInterval, int dataSamples) throws NumberFormatException, java.io.IOException
 		public UtilizationModelPlanetLabInMemory(string inputPath, double schedulingInterval, int dataSamples)
 		{
 			SchedulingInterval = schedulingInterval;

@@ -158,9 +158,6 @@ namespace org.cloudbus.cloudsim.util
         /// @pre fileName != null
         /// @pre rating > 0
         /// @post $none </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public WorkloadFileReader(final String fileName, final int rating) throws java.io.FileNotFoundException
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
         public WorkloadFileReader(string fileName, int rating)
         {
             if (string.ReferenceEquals(fileName, null) || fileName.Length == 0)
@@ -215,15 +212,11 @@ namespace org.cloudbus.cloudsim.util
                         readFile(file);
                     }
                 }
-                //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not available in C#:
-                //ORIGINAL LINE: catch (final java.io.FileNotFoundException e)
                 catch (FileNotFoundException e)
                 {
                     Debug.WriteLine(e.ToString());
                     throw e;
                 }
-                //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not available in C#:
-                //ORIGINAL LINE: catch (final java.io.IOException e)
                 catch (IOException e)
                 {
                     Debug.WriteLine(e.ToString());
@@ -240,8 +233,6 @@ namespace org.cloudbus.cloudsim.util
     /// <returns> <code>true</code> if it is successful, <code>false</code> otherwise
     /// @pre comment != null
     /// @post $none </returns>
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-    //ORIGINAL LINE: public boolean setComment(final String cmt)
     public virtual bool setComment(string cmt)
     {
         bool success = false;
@@ -278,8 +269,6 @@ namespace org.cloudbus.cloudsim.util
     /// @pre runTime > 0
     /// @pre numProc > 0
     /// @post $none </exception>
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-    //ORIGINAL LINE: public boolean setField(final int maxField, final int jobNum, final int submitTime, final int runTime, final int numProc)
     public virtual bool setField(int maxField, int jobNum, int submitTime, int runTime, int numProc)
     {
         // need to subtract by 1 since array starts at 0.
@@ -359,17 +348,11 @@ namespace org.cloudbus.cloudsim.util
     /// @pre numProc > 0
     /// @post $none </param>
     /// <seealso cref= #rating </seealso>
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-    //ORIGINAL LINE: private void createJob(final int id, final long submitTime, final int runTime, final int numProc, final int reqRunTime, final int userID, final int groupID)
     private void createJob(int id, long submitTime, int runTime, int numProc, int reqRunTime, int userID, int groupID)
     {
         // create the cloudlet
-        //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-        //ORIGINAL LINE: final int len = runTime * rating;
         int len = runTime * rating;
         UtilizationModel utilizationModel = new UtilizationModelFull();
-        //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-        //ORIGINAL LINE: final org.cloudbus.cloudsim.Cloudlet wgl = new org.cloudbus.cloudsim.Cloudlet(id, len, numProc, 0, 0, utilizationModel, utilizationModel, utilizationModel);
         Cloudlet wgl = new Cloudlet(id, len, numProc, 0, 0, utilizationModel, utilizationModel, utilizationModel);
         jobs.Add(wgl);
     }
@@ -384,8 +367,6 @@ namespace org.cloudbus.cloudsim.util
     /// @pre array != null
     /// @pre line > 0
     /// @todo The name of the method doesn't describe what it in fact does. </param>
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-    //ORIGINAL LINE: private void extractField(final String[] array, final int line)
     private void extractField(string[] array, int line)
     {
         try
@@ -405,17 +386,11 @@ namespace org.cloudbus.cloudsim.util
             }
 
             // get the submit time
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final Nullable<long> l = new Long(array[SUBMIT_TIME].trim());
             long? l = Convert.ToInt64(array[SUBMIT_TIME].Trim());
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final long submitTime = l.intValue();
             long submitTime = l.Value;
 
             // get the user estimated run time
             obj = Convert.ToInt32(array[REQ_RUN_TIME].Trim());
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final int reqRunTime = obj.intValue();
             int reqRunTime = obj.Value;
 
             // if the required run time field is ignored, then use
@@ -423,11 +398,7 @@ namespace org.cloudbus.cloudsim.util
             obj = Convert.ToInt32(array[RUN_TIME].Trim());
             int runTime = obj.Value;
 
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final int userID = new Integer(array[USER_ID].trim()).intValue();
             int userID = (Convert.ToInt32(array[USER_ID].Trim()));
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ORIGINAL LINE: final int groupID = new Integer(array[GROUP_ID].trim()).intValue();
             int groupID = (Convert.ToInt32(array[GROUP_ID].Trim()));
 
             // according to the SWF manual, runtime of 0 is possible due
@@ -456,8 +427,6 @@ namespace org.cloudbus.cloudsim.util
             }
             createJob(id, submitTime, runTime, numProc, reqRunTime, userID, groupID);
         }
-        //JAVA TO C# CONVERTER WARNING: 'final' catch parameters are not available in C#:
-        //ORIGINAL LINE: catch (final Exception e)
         catch (Exception e)
         {
             Debug.WriteLine(e.ToString());
@@ -473,8 +442,6 @@ namespace org.cloudbus.cloudsim.util
     /// @pre line != null
     /// @pre lineNum > 0
     /// @post $none </param>
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-    //ORIGINAL LINE: private void parseValue(final String line, final int lineNum)
     private void parseValue(string line, int lineNum)
     {
         // skip a comment line
@@ -483,10 +450,6 @@ namespace org.cloudbus.cloudsim.util
             return;
         }
 
-        //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-        //ORIGINAL LINE: final String[] sp = line.split("\\s+");
-        //string[] sp = line.Split("\\s+", true); // split the fields based on a space
-        // TODO: Correct delimiter?
         string[] sp = line.Split( new char[]{ ' '}, StringSplitOptions.RemoveEmptyEntries);
         int len = 0; // length of a string
         int index = 0; // the index of an array
@@ -518,9 +481,6 @@ namespace org.cloudbus.cloudsim.util
     /// <returns> <code>true</code> if successful, <code>false</code> otherwise. </returns>
     /// <exception cref="IOException"> if the there was any error reading the file </exception>
     /// <exception cref="FileNotFoundException"> if the file was not found </exception>
-    //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-    //ORIGINAL LINE: private boolean readFile(final java.io.File fl) throws java.io.IOException, java.io.FileNotFoundException
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
     private bool readFile(File fl)
     {
         bool success = false;
@@ -563,9 +523,6 @@ namespace org.cloudbus.cloudsim.util
     /// <returns> <code>true</code> if successful; <code>false</code> otherwise. </returns>
     /// <exception cref="IOException"> if the there was any error reading the file </exception>
     /// <exception cref="FileNotFoundException"> if the file was not found </exception>
-    //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-    //ORIGINAL LINE: private boolean readGZIPFile(final java.io.File fl) throws java.io.IOException, java.io.FileNotFoundException
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
     private bool readGZIPFile(File fl)
     {
         bool success = false;
@@ -606,9 +563,6 @@ namespace org.cloudbus.cloudsim.util
     /// <param name="fl"> a zip file name </param>
     /// <returns> <code>true</code> if reading a file is successful; <code>false</code> otherwise. </returns>
     /// <exception cref="IOException"> if the there was any error reading the file </exception>
-    //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-    //ORIGINAL LINE: private boolean readZipFile(final java.io.File fl) throws java.io.IOException
-    //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
     private bool readZipFile(File fl)
     {
         bool success = false;
@@ -619,15 +573,10 @@ namespace org.cloudbus.cloudsim.util
 
             // ZipFile offers an Enumeration of all the files in the file
             zipFile = new ZipFile(fl);
-            //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-            //ready()ORIGINAL LINE: final java.util.Iterator<? extends java.util.zip.ZipEntry> e = zipFile.entries();
-            //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
             IEnumerator<ZipEntry> e = zipFile.entries();
             while (e.MoveNext())
             {
                 success = false; // reset the value again
-                                 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                                 //ORIGINAL LINE: final java.util.zip.ZipEntry zipEntry = e.Current;
                 ZipEntry zipEntry = e.Current;
 
                 reader = new System.IO.StreamReader(zipFile.getInputStream(zipEntry));

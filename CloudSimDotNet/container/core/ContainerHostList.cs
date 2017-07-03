@@ -166,9 +166,6 @@ namespace org.cloudbus.cloudsim.container.core
 			{
 			}
 
-
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int compare(T a, T b) throws ClassCastException
 			public virtual int Compare(ContainerHost a, ContainerHost b)
 			{
 				double? aUtilization = ((PowerContainerHost) a).UtilizationOfCpu;
@@ -193,8 +190,6 @@ namespace org.cloudbus.cloudsim.container.core
 			{
 			}
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public int compare(T a, T b) throws ClassCastException
 			public virtual int Compare(ContainerHost a, ContainerHost b)
 			{
 				double? aUtilization = ((PowerContainerHost) a).UtilizationOfCpu;

@@ -32,9 +32,6 @@ namespace org.cloudbus.cloudsim.container.core
 		private double vmStartupDelay;
 		private double containerStartupDelay;
 
-
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PowerContainerDatacenterCM(String name, ContainerDatacenterCharacteristics characteristics, org.cloudbus.cloudsim.container.resourceAllocators.ContainerVmAllocationPolicy vmAllocationPolicy, org.cloudbus.cloudsim.container.resourceAllocators.ContainerAllocationPolicy containerAllocationPolicy, java.util.List<org.cloudbus.cloudsim.Storage> storageList, double schedulingInterval, String experimentName, String logAddress, double vmStartupDelay, double containerStartupDelay) throws Exception
 		public PowerContainerDatacenterCM(string name, ContainerDatacenterCharacteristics characteristics, ContainerVmAllocationPolicy vmAllocationPolicy, ContainerAllocationPolicy containerAllocationPolicy, IList<Storage> storageList, double schedulingInterval, string experimentName, string logAddress, double vmStartupDelay, double containerStartupDelay) : base(name, characteristics, vmAllocationPolicy, containerAllocationPolicy, storageList, schedulingInterval, experimentName, logAddress)
 		{
 			string newlyCreatedVmsAddress;

@@ -33,8 +33,6 @@ namespace org.cloudbus.cloudsim.container.schedulers
 		/// <summary>
 		/// The peList.
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe> peList;
 		private IList<ContainerVmPe> peList;
 
 		/// <summary>
@@ -204,9 +202,6 @@ namespace org.cloudbus.cloudsim.container.schedulers
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe> java.util.List<T> getPeList()
-        //public virtual IList<T> getPeList<T>() where T : org.cloudbus.cloudsim.container.containerVmProvisioners.ContainerVmPe
         public virtual IList<ContainerVmPe> PeListProperty
         {
 			get

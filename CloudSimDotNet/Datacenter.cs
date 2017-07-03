@@ -58,8 +58,6 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The vm list. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends Vm> vmList;
 		private IList<Vm> vmList;
 
 		/// <summary>
@@ -86,8 +84,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre name != null
 		/// @pre resource != null
 		/// @post $none </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public Datacenter(String name, DatacenterCharacteristics characteristics, VmAllocationPolicy vmAllocationPolicy, java.util.List<Storage> storageList, double schedulingInterval) throws Exception
 		public Datacenter(string name, DatacenterCharacteristics characteristics, VmAllocationPolicy vmAllocationPolicy, IList<Storage> storageList, double schedulingInterval) : base(name)
 		{
 
@@ -538,16 +534,12 @@ namespace org.cloudbus.cloudsim
 		protected internal virtual void processVmMigrate(SimEvent ev, bool ack)
 		{
 			object tmp = ev.Data;
-            //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-            //ORIGINAL LINE: if (!(tmp instanceof java.util.Map<?, ?>))
             // TODO: Is this check necessary?
             //if (!(tmp is IDictionary<object, ?>))
 			//{
 			//	throw new System.InvalidCastException("The data object must be Map<String, Object>");
 			//}
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") java.util.Map<String, Object> migrate = (java.util.HashMap<String, Object>) tmp;
 			IDictionary<string, object> migrate = (Dictionary<string, object>) tmp;
 
 			Vm vm = (Vm) migrate["vm"];
@@ -970,8 +962,6 @@ namespace org.cloudbus.cloudsim
 			// simulation step is skipped and schedulers are not properly initialized
 			if (CloudSim.clock() < 0.111 || CloudSim.clock() > LastProcessTime + CloudSim.MinTimeBetweenEvents)
 			{
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends Host> list = getVmAllocationPolicy().HostListProperty();
 				IList<Host> list = VmAllocationPolicy.HostListProperty;
 				double smallerTime = double.MaxValue;
 				// for each host...
@@ -1008,8 +998,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		protected internal virtual void checkCloudletCompletion()
 		{
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends Host> list = getVmAllocationPolicy().HostListProperty();
 			IList<Host> list = VmAllocationPolicy.HostListProperty;
 			for (int i = 0; i < list.Count; i++)
 			{
@@ -1165,9 +1153,6 @@ namespace org.cloudbus.cloudsim
         /// Gets the host list.
         /// </summary>
         /// <returns> the host list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Host> java.util.List<T> HostListProperty()
-        //public virtual IList<T> HostListProperty<T>() where T : Host
         public virtual IList<Host> HostListProperty
         {
 			get
@@ -1265,9 +1250,6 @@ namespace org.cloudbus.cloudsim
         /// Gets the vm list.
         /// </summary>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Vm> java.util.List<T> getVmList()
-        //public virtual IList<T> getVmList<T>() where T : Vm
         public virtual IList<Vm> VmListProperty
         {
 			get

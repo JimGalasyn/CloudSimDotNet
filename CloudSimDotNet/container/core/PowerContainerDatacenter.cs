@@ -69,8 +69,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// <param name="vmAllocationPolicy"> the vm provisioner </param>
 		/// <param name="storageList">        the storage list </param>
 		/// <exception cref="Exception"> the exception </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PowerContainerDatacenter(String name, ContainerDatacenterCharacteristics characteristics, org.cloudbus.cloudsim.container.resourceAllocators.ContainerVmAllocationPolicy vmAllocationPolicy, org.cloudbus.cloudsim.container.resourceAllocators.ContainerAllocationPolicy containerAllocationPolicy, java.util.List<org.cloudbus.cloudsim.Storage> storageList, double schedulingInterval, String experimentName, String logAddress) throws Exception
 		public PowerContainerDatacenter(string name, ContainerDatacenterCharacteristics characteristics, ContainerVmAllocationPolicy vmAllocationPolicy, ContainerAllocationPolicy containerAllocationPolicy, IList<Storage> storageList, double schedulingInterval, string experimentName, string logAddress) : base(name, characteristics, vmAllocationPolicy, containerAllocationPolicy, storageList, schedulingInterval, experimentName, logAddress)
 		{
 			string containerMigrationAddress;

@@ -36,8 +36,6 @@ namespace org.cloudbus.cloudsim.container.lists
             {
             }
 
-            //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-            //ORIGINAL LINE: public int compare(T a, T b) throws ClassCastException
             public virtual int Compare(ContainerVm a, ContainerVm b)
             {
                 double? aUtilization = a.getTotalUtilizationOfCpuMips(CloudSim.clock());

@@ -92,8 +92,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 			saveAllocation();
 
 			ExecutionTimeMeasurer.start("optimizeAllocationVmSelection");
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: List<? extends ContainerVm> vmsToMigrate = getVmsToMigrateFromHosts(overUtilizedHosts);
 			IList<ContainerVm> vmsToMigrate = getVmsToMigrateFromHosts(overUtilizedHosts);
 			ExecutionTimeHistoryVmSelection.Add(ExecutionTimeMeasurer.end("optimizeAllocationVmSelection"));
 
@@ -157,8 +155,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 				excludedHostsForFindingUnderUtilizedHost.Add(underUtilizedHost);
 				excludedHostsForFindingNewVmPlacement.Add(underUtilizedHost);
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: List<? extends ContainerVm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				IList<ContainerVm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				if (vmsToMigrateFromUnderUtilizedHost.Count == 0)
 				{
@@ -375,8 +371,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 		/// </summary>
 		/// <param name="overUtilizedHosts"> the over utilized hosts </param>
 		/// <returns> the vms to migrate from hosts </returns>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected List<? extends ContainerVm> getVmsToMigrateFromHosts(List<PowerContainerHostUtilizationHistory> overUtilizedHosts)
 		protected internal virtual IList<ContainerVm> getVmsToMigrateFromHosts(IList<PowerContainerHostUtilizationHistory> overUtilizedHosts)
 		{
 			IList<ContainerVm> vmsToMigrate = new List<ContainerVm>();
@@ -406,8 +400,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 		/// </summary>
 		/// <param name="host"> the host </param>
 		/// <returns> the vms to migrate from under utilized host </returns>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected List<? extends ContainerVm> getVmsToMigrateFromUnderUtilizedHost(PowerContainerHost host)
 		protected internal virtual IList<ContainerVm> getVmsToMigrateFromUnderUtilizedHost(PowerContainerHost host)
 		{
 			IList<ContainerVm> vmsToMigrate = new List<ContainerVm>();

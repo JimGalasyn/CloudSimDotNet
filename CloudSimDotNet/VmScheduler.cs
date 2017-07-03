@@ -29,8 +29,6 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The PEs of the host where the scheduler is associated. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends Pe> peList;
 		private IList<Pe> peList;
 
 		/// <summary>
@@ -221,9 +219,6 @@ namespace org.cloudbus.cloudsim
         /// <returns> the pe list
         /// @todo The warning have to be checked 
         ///  </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Pe> java.util.List<T> getPeList()
-        //public virtual IList<T> getPeList<T>() where T : Pe
         public virtual IList<Pe> PeListProperty
         {
 			get

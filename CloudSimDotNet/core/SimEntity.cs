@@ -479,8 +479,6 @@ namespace org.cloudbus.cloudsim.core
         /// </summary>
         /// <returns> A clone of the entity </returns>
         /// <exception cref="CloneNotSupportedException"> when the entity doesn't support cloning </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected final Object clone() throws CloneNotSupportedException
         //protected internal override object clone()
         public object Clone()
         {

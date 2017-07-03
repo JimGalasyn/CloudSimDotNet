@@ -19,8 +19,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocators
 		/// <summary>
 		/// The host list.
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends org.cloudbus.cloudsim.container.core.ContainerHost> containerHostList;
 		private IList<ContainerHost> containerHostList;
 
 		/// <summary>

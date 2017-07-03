@@ -52,16 +52,12 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The list of VMs assigned to the host. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<? extends Vm> vmList = new java.util.ArrayList<Vm>();
 		private readonly IList<Vm> vmList = new List<Vm>();
 
 		/// <summary>
 		/// The Processing Elements (PEs) of the host, that
 		/// represent the CPU cores of it, and thus, its processing capacity. 
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends Pe> peList;
 		private IList<Pe> peList;
 
 		/// <summary>
@@ -566,9 +562,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the pe list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Pe> java.util.List<T> getPeList()
-        //public virtual IList<T> getPeList<T>() where T : Pe
         public virtual IList<Pe> PeListProperty
         {
 			get
@@ -587,9 +580,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Vm> java.util.List<T> getVmList()
-        //public virtual IList<Vm> getVmList
         public virtual IList<Vm> VmListProperty
         {
 			get

@@ -35,8 +35,6 @@ namespace org.cloudbus.cloudsim.network
 		/// <summary>
 		/// Private constructor to ensure that only an correct initialized delay-matrix could be created.
 		/// </summary>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private DelayMatrix_Float()
 		private DelayMatrix_Float()
 		{
 		}

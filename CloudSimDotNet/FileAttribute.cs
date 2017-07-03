@@ -77,8 +77,6 @@ namespace org.cloudbus.cloudsim
 		///             <li>the file name is empty or <tt>null</tt>
 		///             <li>the file size is zero or negative numbers
 		///             </ul> </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public FileAttribute(String fileName, int fileSize) throws ParameterException
 		public FileAttribute(string fileName, int fileSize)
 		{
 			// check for errors in the input

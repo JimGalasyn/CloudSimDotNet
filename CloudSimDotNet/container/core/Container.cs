@@ -728,8 +728,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// Adds the utilization history value.
 		/// </summary>
 		/// <param name="utilization"> the utilization </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void addUtilizationHistoryValue(final double utilization)
 		public virtual void addUtilizationHistoryValue(double utilization)
 		{
 			UtilizationHistory.Insert(0, utilization);

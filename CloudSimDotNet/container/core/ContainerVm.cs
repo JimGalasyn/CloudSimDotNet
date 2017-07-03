@@ -50,24 +50,17 @@ namespace org.cloudbus.cloudsim.container.core
         /// <summary>
         /// The number of PEs.
         /// </summary>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unused") private int numberOfPes;
         private int numberOfPes;
 
         /// <summary>
         /// The ram.
         /// </summary>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unused") private float ram;
         private float ram;
 
         /// <summary>
         /// The bw.
         /// </summary>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unused") private long bw;
         private long bw;
-
 
         /// <summary>
         /// The vmm.
@@ -132,8 +125,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// <summary>
         /// The storage.
         /// </summary>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unused") private long storage;
         // TEST: (fixed) Never used.
         //private long storage;
 
@@ -150,15 +141,11 @@ namespace org.cloudbus.cloudsim.container.core
         /// <summary>
         /// The vm list.
         /// </summary>
-        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: private final java.util.List<? extends Container> containerList = new java.util.ArrayList<>();
         private readonly IList<Container> containerList = new List<Container>();
 
         /// <summary>
         /// The pe list.
         /// </summary>
-        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: private java.util.List<? extends org.cloudbus.cloudsim.container.containerProvisioners.ContainerPe> peList;
         private IList<ContainerPe> peList;
 
         /// <summary>
@@ -174,9 +161,7 @@ namespace org.cloudbus.cloudsim.container.core
         /// <summary>
         /// The datacenter where the host is placed.
         /// </summary>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unused") private ContainerDatacenter datacenter;
-        // TEST: (fixed) Never used.
+        // TODO: TEST: (fixed) Never used.
         //private ContainerDatacenter datacenter;
 
 
@@ -1151,9 +1136,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the pe list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends org.cloudbus.cloudsim.container.containerProvisioners.ContainerPe> java.util.List<T> getPeList()
-        //public virtual IList<T> getPeList<T>() where T : org.cloudbus.cloudsim.container.containerProvisioners.ContainerPe
         public virtual IList<ContainerPe> PeListProperty
         {
             get
@@ -1174,17 +1156,13 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the container list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Container> java.util.List<T> getContainerList()
         public virtual IList<Container> ContainerListProperty
         {
             get
-
             {
                 return (IList<Container>)containerList;
             }
         }
-
 
         /// <summary>
         /// Checks if is failed.

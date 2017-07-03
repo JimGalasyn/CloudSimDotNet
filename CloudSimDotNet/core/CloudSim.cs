@@ -42,8 +42,6 @@ namespace org.cloudbus.cloudsim.core
 
 		/// <summary>
 		/// The id of CloudSimShutdown entity. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private static int shutdownId = -1;
 		private static int shutdownId = -1;
 
 		/// <summary>
@@ -56,8 +54,6 @@ namespace org.cloudbus.cloudsim.core
 
 		/// <summary>
 		/// The trace flag. </summary>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private static boolean traceFlag = false;
 		private static bool traceFlag = false;
 
 		/// <summary>
@@ -82,8 +78,6 @@ namespace org.cloudbus.cloudsim.core
 		///             or this entity name is <tt>null</tt> or empty
 		/// @pre $none
 		/// @post $none </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: private static void initCommonVariable(java.util.Calendar _calendar, boolean _traceFlag, int numUser) throws Exception
 		private static void initCommonVariable(DateTime _calendar, bool _traceFlag, int numUser)
 		{
 			initialize();
@@ -206,8 +200,6 @@ namespace org.cloudbus.cloudsim.core
 		/// <seealso cref= gridsim.CloudSim#init(int, Calendar, boolean)
 		/// @pre $none
 		/// @post $none </seealso>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static double startSimulation() throws NullPointerException
 		public static double startSimulation()
 		{
 			Log.printConcatLine("Starting CloudSim version ", CLOUDSIM_VERSION_STRING);
@@ -243,8 +235,6 @@ namespace org.cloudbus.cloudsim.core
 		/// <seealso cref= Simulation#runStop()
 		/// @pre $none
 		/// @post $none </seealso>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public static void stopSimulation() throws NullPointerException
 		public static void stopSimulation()
 		{
 			try

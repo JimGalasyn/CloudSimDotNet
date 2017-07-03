@@ -40,8 +40,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="bandwidth"> Network bandwidth </param>
 		/// <param name="networkLatency"> Network latency </param>
 		/// <exception cref="ParameterException"> when the name and the capacity are not valid </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SanStorage(double capacity, double bandwidth, double networkLatency) throws ParameterException
 		public SanStorage(double capacity, double bandwidth, double networkLatency) : base(capacity)
 		{
 			this.bandwidth = bandwidth;
@@ -57,8 +55,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="bandwidth"> Network bandwidth </param>
 		/// <param name="networkLatency"> Network latency </param>
 		/// <exception cref="ParameterException"> when the name and the capacity are not valid </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public SanStorage(String name, double capacity, double bandwidth, double networkLatency) throws ParameterException
 		public SanStorage(string name, double capacity, double bandwidth, double networkLatency) : base(name, capacity)
 		{
 			this.bandwidth = bandwidth;

@@ -85,8 +85,6 @@ namespace org.cloudbus.cloudsim.network.datacenter
 		/// @pre name != null
 		/// @pre resource != null
 		/// @post $none </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public NetworkDatacenter(String name, org.cloudbus.cloudsim.DatacenterCharacteristics characteristics, org.cloudbus.cloudsim.VmAllocationPolicy vmAllocationPolicy, java.util.List<org.cloudbus.cloudsim.Storage> storageList, double schedulingInterval) throws Exception
 		public NetworkDatacenter(string name, DatacenterCharacteristics characteristics, VmAllocationPolicy vmAllocationPolicy, IList<Storage> storageList, double schedulingInterval) : base(name, characteristics, vmAllocationPolicy, storageList, schedulingInterval)
 		{
 			VmToSwitchid = new Dictionary<int?, int?>();

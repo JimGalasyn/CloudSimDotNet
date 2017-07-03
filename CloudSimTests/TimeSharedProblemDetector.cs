@@ -58,8 +58,6 @@ namespace org.cloudbus.cloudsim
 				// Second step: Create Datacenters
 				// Datacenters are the resource providers in CloudSim. We need at
 				// list one of them to run a CloudSim simulation
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") org.cloudbus.cloudsim.Datacenter datacenter0 = createDatacenter("Datacenter_0");
 				Datacenter datacenter0 = createDatacenter("Datacenter_0");
 
 				// Third step: Create Broker
