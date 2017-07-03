@@ -21,11 +21,6 @@ namespace org.cloudbus.cloudsim
 	{
 		private UtilizationModelStochastic utilizationModel;
 
-		//public virtual void setUp()
-		//{
-		//	utilizationModel = new UtilizationModelStochastic();
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

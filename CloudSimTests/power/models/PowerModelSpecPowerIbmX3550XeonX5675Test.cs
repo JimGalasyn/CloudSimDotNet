@@ -26,11 +26,6 @@ namespace org.cloudbus.cloudsim.power.models
 	{
 		private PowerModel powerModel;
 
-        //public virtual void setUp()
-        //{
-        //	powerModel = new PowerModelSpecPowerIbmX3550XeonX5675();
-        //}
-
         [TestInitialize()]
         public void Initialize()
         {

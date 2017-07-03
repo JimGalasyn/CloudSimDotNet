@@ -24,11 +24,6 @@ namespace org.cloudbus.cloudsim.provisioners
 
 		private BwProvisionerSimple bwProvisioner;
 
-		//public virtual void setUp()
-		//{
-		//	bwProvisioner = new BwProvisionerSimple(BW);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

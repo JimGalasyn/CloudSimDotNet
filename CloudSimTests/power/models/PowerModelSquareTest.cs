@@ -26,11 +26,6 @@ namespace org.cloudbus.cloudsim.power.models
 
 		private PowerModelSquare powerModel;
 
-		//public virtual void setUp()
-		//{
-		//	powerModel = new PowerModelSquare(MAX_POWER, STATIC_POWER_PERCENT);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

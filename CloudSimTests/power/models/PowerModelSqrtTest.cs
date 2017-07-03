@@ -30,11 +30,6 @@ namespace org.cloudbus.cloudsim.power.models
 
 		private PowerModelSqrt powerModel;
 
-		//public virtual void setUp()
-		//{
-		//	powerModel = new PowerModelSqrt(MAX_POWER, STATIC_POWER_PERCENT);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

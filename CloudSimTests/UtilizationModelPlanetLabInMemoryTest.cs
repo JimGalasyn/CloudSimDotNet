@@ -10,13 +10,7 @@
 
 		public const string FILE = "146-179_surfsnel_dsl_internl_net_colostate_557.dat";
 
-        // TODO: utilizationModel never assigned.
-		private UtilizationModelPlanetLabInMemory utilizationModel;
-
-		//public virtual void setUp()
-		//{
-        //    utilizationModel = new UtilizationModelPlanetLabInMemory(this.GetType().ClassLoader.getResource(FILE).Path, SCHEDULING_INTERVAL);
-		//}
+        private UtilizationModelPlanetLabInMemory utilizationModel;
 
         [TestInitialize()]
         public void Initialize()

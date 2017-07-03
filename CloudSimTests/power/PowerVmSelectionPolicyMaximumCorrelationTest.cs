@@ -19,11 +19,6 @@ namespace org.cloudbus.cloudsim.power
 
 		private PowerVmSelectionPolicyMaximumCorrelation vmSelectionPolicyMaximumCorrelation;
 
-		//public virtual void setUp()
-		//{
-		//	vmSelectionPolicyMaximumCorrelation = new PowerVmSelectionPolicyMaximumCorrelation(new PowerVmSelectionPolicyRandomSelection());
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

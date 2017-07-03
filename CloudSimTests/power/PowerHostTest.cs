@@ -31,13 +31,6 @@ namespace org.cloudbus.cloudsim.power
 
 		private PowerHost host;
 
-		//public virtual void setUp()
-		//{
-		//	IList<Pe> peList = new List<Pe>();
-		//	peList.Add(new Pe(0, new PeProvisionerSimple(MIPS)));
-		//	host = new PowerHost(0, null, null, 0, peList, null, new PowerModelLinear(MAX_POWER, STATIC_POWER_PERCENT));
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

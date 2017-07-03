@@ -34,17 +34,6 @@ namespace org.cloudbus.cloudsim
 
 		// private Vm vm3;
 
-		//public virtual void setUp()
-		//{
-		//	peList = new List<Pe>();
-		//	peList.Add(new Pe(0, new PeProvisionerSimple(MIPS)));
-		//	peList.Add(new Pe(1, new PeProvisionerSimple(MIPS)));
-		//	vmScheduler = new VmSchedulerTimeSharedOverSubscription(peList);
-		//	vm1 = new Vm(0, 0, MIPS / 4, 1, 0, 0, 0, "", null);
-		//	vm2 = new Vm(1, 0, MIPS / 2, 2, 0, 0, 0, "", null);
-		//	// vm3 = new Vm(2, 0, MIPS, 2, 0, 0, 0, 0, "", null);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

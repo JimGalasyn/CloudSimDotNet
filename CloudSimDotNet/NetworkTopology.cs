@@ -279,10 +279,10 @@ namespace org.cloudbus.cloudsim
 				catch (Exception ex)
 				{
                     // in case of error, just keep running and return 0.0
-                    // TODO: is the map in NetworkTopology supposed to be empty?
-                    Debug.WriteLine(ex.ToString());
-				}
-			}
+                    // TODO: This seems to be by design -- convert to using map.ContainsKey.
+                    //Debug.WriteLine(ex.ToString());
+                }
+            }
 			return 0.0;
 		}
 

@@ -23,11 +23,6 @@ namespace org.cloudbus.cloudsim.lists
 	{
 		private IList<Vm> vmList;
 
-        //public virtual void setUp()
-        //{
-        //	vmList = new List<Vm>();
-        //}
-
         [TestInitialize()]
         public void Initialize()
         {

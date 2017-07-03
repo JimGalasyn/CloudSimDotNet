@@ -41,12 +41,6 @@ namespace org.cloudbus.cloudsim
 
 		private Vm vm;
 
-		//public virtual void setUp()
-		//{
-		//	vmScheduler = new CloudletSchedulerDynamicWorkload(MIPS, PES_NUMBER);
-		//	vm = new Vm(ID, USER_ID, MIPS, PES_NUMBER, RAM, BW, SIZE, VMM, vmScheduler);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {
