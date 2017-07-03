@@ -17,10 +17,6 @@ namespace org.cloudbus.cloudsim.examples.container
         {
         }
 
-        /*
-		 * (non-Javadoc)
-		 * @see cloudsim.power.UtilizationModel#getUtilization(double)
-		 */
         public override double getUtilization(double inputTime)
         {
             double utilization;

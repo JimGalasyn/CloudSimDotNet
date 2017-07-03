@@ -11,11 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="resources\146-179_surfsnel_dsl_internl_net_colostate_557.dat" />
     <None Remove="resources\LCG.swf" />
     <None Remove="resources\topology.brite" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="resources\146-179_surfsnel_dsl_internl_net_colostate_557.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\LCG.swf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

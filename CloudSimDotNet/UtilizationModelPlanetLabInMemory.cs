@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace org.cloudbus.cloudsim
 {
@@ -11,7 +12,6 @@ namespace org.cloudbus.cloudsim
 	/// </summary>
 	public class UtilizationModelPlanetLabInMemory : UtilizationModel
 	{
-
 		/// <summary>
 		/// The scheduling interval. </summary>
 		private double schedulingInterval;
@@ -31,15 +31,14 @@ namespace org.cloudbus.cloudsim
 		{
 			data = new double[289];
 			SchedulingInterval = schedulingInterval;
-            // TODO: Proper stream IO 
-            System.IO.StreamReader input = null; // new System.IO.StreamReader(inputPath);
-			int n = data.Length;
+            
+            var reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read));
+            int n = data.Length;
 			for (int i = 0; i < n - 1; i++)
 			{
-				data[i] = Convert.ToInt32(input.ReadLine()) / 100.0;
+				data[i] = Convert.ToInt32(reader.ReadLine()) / 100.0;
 			}
 			data[n - 1] = data[n - 2];
-			//input.Close();
 		}
 
 		/// <summary>
