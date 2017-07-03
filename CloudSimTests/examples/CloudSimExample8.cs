@@ -80,7 +80,7 @@ namespace org.cloudbus.cloudsim.examples
 
             for (int i = 0; i < cloudlets; i++)
             {
-                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
                 // setting the owner of these Cloudlets
                 cloudlet[i].UserId = userId;
                 // TODO: TEST list.AddLast(cloudlet[i]);

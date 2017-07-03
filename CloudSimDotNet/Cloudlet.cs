@@ -49,7 +49,7 @@ namespace org.cloudbus.cloudsim
 		/// completed (that may be uninterrupted or not, depending on the scheduling
 		/// policy).
 		/// </summary>
-		/// <seealso cref= #setNumberOfPes(int)
+		/// <seealso cref= "setNumberOfPes(int)"
 		///  </seealso>
 		private long cloudletLength;
 
@@ -72,7 +72,7 @@ namespace org.cloudbus.cloudsim
 		/// The number of Processing Elements (Pe) required to execute this cloudlet
 		/// (job).
 		/// </summary>
-		/// <seealso cref= #setNumberOfPes(int) </seealso>
+		/// <seealso cref= "setNumberOfPes(int)" </seealso>
 		private int numberOfPes;
 
 		/// <summary>
