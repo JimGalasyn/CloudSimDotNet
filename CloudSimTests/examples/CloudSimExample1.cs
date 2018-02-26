@@ -51,7 +51,7 @@ namespace org.cloudbus.cloudsim.examples
 
             /* Comment Start - Dinesh Bhagwat 
              * Initialize the CloudSim library. 
-             * init() invokes initCommonVariable() which in turn calls initialize() (all these 3 methods are defined in CloudSim.java).
+             * init() invokes initCommonVariable() which in turn calls initialize() (all these 3 methods are defined in CloudSim.cs).
              * initialize() creates two collections - an ArrayList of SimEntity Objects (named entities which denote the simulation entities) and 
              * a LinkedHashMap (named entitiesByName which denote the LinkedHashMap of the same simulation entities), with name of every SimEntity as the key.
              * initialize() creates two queues - a Queue of SimEvents (future) and another Queue of SimEvents (deferred). 
@@ -111,7 +111,7 @@ namespace org.cloudbus.cloudsim.examples
             long outputSize = 300;
             UtilizationModel utilizationModel = new UtilizationModelFull();
 
-            Cloudlet cloudlet = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet.UserId = brokerId;
             cloudlet.VmId = vmid;
 
@@ -130,16 +130,18 @@ namespace org.cloudbus.cloudsim.examples
             IList<Cloudlet> newList = broker.CloudletReceivedListProperty;
 
             //========== OUTPUT ==========
-            //Cloudlet ID STATUS    Data center ID VM ID Time    Start Time    Finish Time
-            //    0        SUCCESS        2            0        400        0.1        400.1
+            //Cloudlet ID | STATUS  |  Data center ID | VM ID | Time  |  Start Time  |  Finish Time
+            //    0       | SUCCESS |        2        |   0   | 400.0 |     0.1      |     400.1
 
             var testCloudlet = newList[0];
             Assert.AreEqual(testCloudlet.CloudletStatus, Cloudlet.SUCCESS);
             Assert.AreEqual(testCloudlet.CloudletId, 0);
             Assert.AreEqual(testCloudlet.ResourceId, 2);
             Assert.AreEqual(testCloudlet.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet.ActualCPUTime - 400) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet.ExecStartTime - 0.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet.WallClockTime - 400) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet.SubmissionTime - 0.1) <= 0.01);
+            //Assert.IsTrue(Math.Abs(testCloudlet.ActualCPUTime - 400) <= 0.01);
+            //Assert.IsTrue(Math.Abs(testCloudlet.ExecStartTime - 0.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet.FinishTime - 400.1) <= 0.01);
         }
 

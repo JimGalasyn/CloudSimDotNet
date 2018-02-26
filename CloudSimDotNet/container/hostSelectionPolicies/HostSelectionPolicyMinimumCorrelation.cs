@@ -19,8 +19,6 @@ namespace org.cloudbus.cloudsim.container.hostSelectionPolicies
 		/// Instantiates a new power vm selection policy maximum correlation.
 		/// </summary>
 		/// <param name="fallbackPolicy"> the fallback policy </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public HostSelectionPolicyMinimumCorrelation(final HostSelectionPolicy fallbackPolicy)
 		public HostSelectionPolicyMinimumCorrelation(HostSelectionPolicy fallbackPolicy) : base()
 		{
 			FallbackPolicy = fallbackPolicy;

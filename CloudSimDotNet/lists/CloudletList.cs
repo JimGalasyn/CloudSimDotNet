@@ -99,8 +99,6 @@ namespace org.cloudbus.cloudsim.lists
             /// @pre b != null
             /// @post $none </exception>
             /// <remarks>TODO: Implement a proper IComparator.</remarks>
-            //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-            //ORIGINAL LINE: public int compare(T a, T b) throws ClassCastException
             //public virtual int Compare(T a, T b)
             public virtual int Compare(Cloudlet a, Cloudlet b)
             {
@@ -109,7 +107,5 @@ namespace org.cloudbus.cloudsim.lists
                 return cla.Value.CompareTo(clb.Value);
 			}
 		}
-
 	}
-
 }

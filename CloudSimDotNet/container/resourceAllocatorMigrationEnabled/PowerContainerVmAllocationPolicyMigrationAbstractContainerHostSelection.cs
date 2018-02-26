@@ -105,8 +105,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 
 		}
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: @Override protected Collection<? extends Map<String, Object>> getContainerMigrationMapFromUnderUtilizedHosts(List<PowerContainerHostUtilizationHistory> overUtilizedHosts, List<Map<String, Object>> previouseMap)
 		protected internal override ICollection<IDictionary<string, object>> getContainerMigrationMapFromUnderUtilizedHosts(IList<PowerContainerHostUtilizationHistory> overUtilizedHosts, IList<IDictionary<string, object>> previouseMap)
 		{
 
@@ -150,8 +148,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 				excludedHostsForFindingUnderUtilizedHost.Add(underUtilizedHost);
 				excludedHostsForFindingNewContainerPlacement.Add(underUtilizedHost);
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: List<? extends Container> containersToMigrateFromUnderUtilizedHost = getContainersToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				IList<Container> containersToMigrateFromUnderUtilizedHost = getContainersToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				if (containersToMigrateFromUnderUtilizedHost.Count == 0)
 				{
@@ -203,8 +199,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 		/// </summary>
 		/// <param name="host"> the host </param>
 		/// <returns> the vms to migrate from under utilized host </returns>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected List<? extends Container> getContainersToMigrateFromUnderUtilizedHost(PowerContainerHost host)
 		protected internal virtual IList<Container> getContainersToMigrateFromUnderUtilizedHost(PowerContainerHost host)
 		{
 			IList<Container> containersToMigrate = new List<Container>();

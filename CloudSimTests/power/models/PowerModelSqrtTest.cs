@@ -9,11 +9,7 @@
  */
 
 namespace org.cloudbus.cloudsim.power.models
-{
-
-    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-    //	import static org.junit.Assert.Assert.AreEqual;
-
+{   
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /// <summary>
@@ -29,11 +25,6 @@ namespace org.cloudbus.cloudsim.power.models
 		private const double STATIC_POWER_PERCENT = 0.3;
 
 		private PowerModelSqrt powerModel;
-
-		//public virtual void setUp()
-		//{
-		//	powerModel = new PowerModelSqrt(MAX_POWER, STATIC_POWER_PERCENT);
-		//}
 
         [TestInitialize()]
         public void Initialize()

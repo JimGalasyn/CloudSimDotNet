@@ -40,16 +40,6 @@ namespace org.cloudbus.cloudsim
 		private Host host;
 		private IList<Pe> peList;
 
-		//public virtual void setUp()
-		//{
-		//	peList = new List<Pe>();
-		//	peList.Add(new Pe(0, new PeProvisionerSimple(MIPS)));
-		//	peList.Add(new Pe(1, new PeProvisionerSimple(MIPS)));
-
-		//	host = new Host(ID, new RamProvisionerSimple(RAM), new BwProvisionerSimple(BW), STORAGE, peList, new VmSchedulerTimeShared(peList)
-		//   );
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

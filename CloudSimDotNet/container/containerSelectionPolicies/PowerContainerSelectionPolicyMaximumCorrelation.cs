@@ -26,20 +26,11 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 		/// Instantiates a new power container selection policy maximum correlation.
 		/// </summary>
 		/// <param name="fallbackPolicy"> the fallback policy </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerContainerSelectionPolicyMaximumCorrelation(final PowerContainerSelectionPolicy fallbackPolicy)
 		public PowerContainerSelectionPolicyMaximumCorrelation(PowerContainerSelectionPolicy fallbackPolicy) : base()
 		{
 			FallbackPolicy = fallbackPolicy;
 		}
 
-		/*
-		 * (non-Javadoc)
-		 *
-		 * @see powerContainerSelectionPolicy#getContainerToMigrate()
-		 */
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public org.cloudbus.cloudsim.container.core.Container getContainerToMigrate(final org.cloudbus.cloudsim.container.core.PowerContainerHost host)
 		public override Container getContainerToMigrate(PowerContainerHost host)
 		{
 			IList<PowerContainer> migratableContainers = getMigratableContainers(host);
@@ -75,8 +66,6 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 		/// </summary>
 		/// <param name="powerContainers"> the powerContainers </param>
 		/// <returns> the utilization matrix </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: protected double[][] getUtilizationMatrix(final java.util.List<org.cloudbus.cloudsim.container.core.PowerContainer> powerContainers)
 		protected internal virtual double[][] getUtilizationMatrix(IList<PowerContainer> powerContainers)
 		{
 			int n = powerContainers.Count;
@@ -100,8 +89,6 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 		/// </summary>
 		/// <param name="containerList"> the container list </param>
 		/// <returns> the min utilization history size </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: protected int getMinUtilizationHistorySize(final java.util.List<org.cloudbus.cloudsim.container.core.PowerContainer> containerList)
 		protected internal virtual int getMinUtilizationHistorySize(IList<PowerContainer> containerList)
 		{
 			int minSize = int.MaxValue;
@@ -121,8 +108,6 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 		/// </summary>
 		/// <param name="data"> the data </param>
 		/// <returns> the correlation coefficients </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: protected java.util.List<Nullable<double>> getCorrelationCoefficients(final double[][] data)
 		protected internal virtual IList<double?> getCorrelationCoefficients(double[][] data)
 		{
 			int n = data.Length;
@@ -169,10 +154,5 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 				this.fallbackPolicy = value;
 			}
 		}
-
-
 	}
-
-
-
 }

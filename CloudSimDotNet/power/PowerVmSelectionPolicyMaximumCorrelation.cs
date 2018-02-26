@@ -45,15 +45,11 @@ namespace org.cloudbus.cloudsim.power
 		/// Instantiates a new PowerVmSelectionPolicyMaximumCorrelation.
 		/// </summary>
 		/// <param name="fallbackPolicy"> the fallback policy </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerVmSelectionPolicyMaximumCorrelation(final PowerVmSelectionPolicy fallbackPolicy)
 		public PowerVmSelectionPolicyMaximumCorrelation(PowerVmSelectionPolicy fallbackPolicy) : base()
 		{
 			FallbackPolicy = fallbackPolicy;
 		}
 
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public org.cloudbus.cloudsim.Vm getVmToMigrate(final PowerHost host)
 		public override Vm getVmToMigrate(PowerHost host)
 		{
 			IList<PowerVm> migratableVms = getMigratableVms(host);
@@ -90,8 +86,6 @@ namespace org.cloudbus.cloudsim.power
 		/// <param name="vmList"> the VM list </param>
 		/// <returns> the CPU utilization percentage matrix, where each line i
 		/// is a VM and each column j is a CPU utilization percentage history for that VM. </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: protected double[][] getUtilizationMatrix(final java.util.List<PowerVm> vmList)
 		protected internal virtual double[][] getUtilizationMatrix(IList<PowerVm> vmList)
 		{
 			int n = vmList.Count;
@@ -102,8 +96,6 @@ namespace org.cloudbus.cloudsim.power
 					a size greater than m, it will thow an exception.
 					It as to be included a test case for that.*/
 			int m = getMinUtilizationHistorySize(vmList);
-//JAVA TO C# CONVERTER NOTE: The following call to the 'RectangularArrays' helper class reproduces the rectangular array initialization that is automatic in Java:
-//ORIGINAL LINE: double[][] utilization = new double[n][m];
 			double[][] utilization = RectangularArrays.ReturnRectangularDoubleArray(n, m);
 			for (int i = 0; i < n; i++)
 			{
@@ -121,8 +113,6 @@ namespace org.cloudbus.cloudsim.power
 		/// </summary>
 		/// <param name="vmList"> the VM list </param>
 		/// <returns> the min CPU utilization percentage history size of the VM list </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: protected int getMinUtilizationHistorySize(final java.util.List<PowerVm> vmList)
 		protected internal virtual int getMinUtilizationHistorySize(IList<PowerVm> vmList)
 		{
 			int minSize = int.MaxValue;

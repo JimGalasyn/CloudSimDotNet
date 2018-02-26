@@ -46,8 +46,6 @@ namespace org.cloudbus.cloudsim.power
 		/// <param name="storageList"> the storage list
 		/// </param>
 		/// <exception cref="Exception"> the exception </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PowerDatacenterNonPowerAware(String name, org.cloudbus.cloudsim.DatacenterCharacteristics characteristics, org.cloudbus.cloudsim.VmAllocationPolicy vmAllocationPolicy, java.util.List<org.cloudbus.cloudsim.Storage> storageList, double schedulingInterval) throws Exception
 		public PowerDatacenterNonPowerAware(string name, DatacenterCharacteristics characteristics, VmAllocationPolicy vmAllocationPolicy, IList<Storage> storageList, double schedulingInterval) : base(name, characteristics, vmAllocationPolicy, storageList, schedulingInterval)
 		{
 		}

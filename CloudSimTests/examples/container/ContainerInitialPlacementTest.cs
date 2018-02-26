@@ -15,8 +15,6 @@ namespace org.cloudbus.cloudsim.examples.container
         /// </summary>
         /// <param name="args"> the arguments </param>
         /// <exception cref="IOException"> Signals that an I/O exception has occurred. </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public static void main(String[] args) throws java.io.IOException
         public static void ExampleMain(string[] args)
         //public static void Main(string[] args)
         {

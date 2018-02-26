@@ -49,7 +49,7 @@ namespace org.cloudbus.cloudsim
 		/// completed (that may be uninterrupted or not, depending on the scheduling
 		/// policy).
 		/// </summary>
-		/// <seealso cref= #setNumberOfPes(int)
+		/// <seealso cref= "setNumberOfPes(int)"
 		///  </seealso>
 		private long cloudletLength;
 
@@ -72,7 +72,7 @@ namespace org.cloudbus.cloudsim
 		/// The number of Processing Elements (Pe) required to execute this cloudlet
 		/// (job).
 		/// </summary>
-		/// <seealso cref= #setNumberOfPes(int) </seealso>
+		/// <seealso cref= "setNumberOfPes(int)" </seealso>
 		private int numberOfPes;
 
 		/// <summary>
@@ -266,8 +266,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre cloudletFileSize >= 1
 		/// @pre cloudletOutputSize >= 1
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public Cloudlet(final int cloudletId, final long cloudletLength, final int pesNumber, final long cloudletFileSize, final long cloudletOutputSize, final UtilizationModel utilizationModelCpu, final UtilizationModel utilizationModelRam, final UtilizationModel utilizationModelBw)
 		public Cloudlet(int cloudletId, long cloudletLength, int pesNumber, long cloudletFileSize, long cloudletOutputSize, UtilizationModel utilizationModelCpu, UtilizationModel utilizationModelRam, UtilizationModel utilizationModelBw) : this(cloudletId, cloudletLength, pesNumber, cloudletFileSize, cloudletOutputSize, utilizationModelCpu, utilizationModelRam, utilizationModelBw, false)
 		{
 			vmId = -1;
@@ -299,8 +297,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre cloudletFileSize >= 1
 		/// @pre cloudletOutputSize >= 1
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public Cloudlet(final int cloudletId, final long cloudletLength, final int pesNumber, final long cloudletFileSize, final long cloudletOutputSize, final UtilizationModel utilizationModelCpu, final UtilizationModel utilizationModelRam, final UtilizationModel utilizationModelBw, final boolean record, final java.util.List<String> fileList)
 		public Cloudlet(int cloudletId, long cloudletLength, int pesNumber, long cloudletFileSize, long cloudletOutputSize, UtilizationModel utilizationModelCpu, UtilizationModel utilizationModelRam, UtilizationModel utilizationModelBw, bool record, IList<string> fileList) : this(cloudletId, cloudletLength, pesNumber, cloudletFileSize, cloudletOutputSize, utilizationModelCpu, utilizationModelRam, utilizationModelBw, record)
 		{
 			vmId = -1;
@@ -333,8 +329,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre cloudletFileSize >= 1
 		/// @pre cloudletOutputSize >= 1
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public Cloudlet(final int cloudletId, final long cloudletLength, final int pesNumber, final long cloudletFileSize, final long cloudletOutputSize, final UtilizationModel utilizationModelCpu, final UtilizationModel utilizationModelRam, final UtilizationModel utilizationModelBw, final java.util.List<String> fileList)
 		public Cloudlet(int cloudletId, long cloudletLength, int pesNumber, long cloudletFileSize, long cloudletOutputSize, UtilizationModel utilizationModelCpu, UtilizationModel utilizationModelRam, UtilizationModel utilizationModelBw, IList<string> fileList) : this(cloudletId, cloudletLength, pesNumber, cloudletFileSize, cloudletOutputSize, utilizationModelCpu, utilizationModelRam, utilizationModelBw, false)
 		{
 			vmId = -1;
@@ -366,8 +360,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre cloudletFileSize >= 1
 		/// @pre cloudletOutputSize >= 1
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public Cloudlet(final int cloudletId, final long cloudletLength, final int pesNumber, final long cloudletFileSize, final long cloudletOutputSize, final UtilizationModel utilizationModelCpu, final UtilizationModel utilizationModelRam, final UtilizationModel utilizationModelBw, final boolean record)
 		public Cloudlet(int cloudletId, long cloudletLength, int pesNumber, long cloudletFileSize, long cloudletOutputSize, UtilizationModel utilizationModelCpu, UtilizationModel utilizationModelRam, UtilizationModel utilizationModelBw, bool record)
 		{
 			userId = -1; // to be set by a Broker or user
@@ -457,8 +449,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="resId"> the reservation ID </param>
 		/// <returns> <tt>true</tt> if the ID has successfully been set or
 		/// <tt>false</tt> otherwise. </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public boolean setReservationId(final int resId)
 		public virtual bool setReservationId(int resId)
 		{
 			if (resId <= 0)
@@ -510,8 +500,6 @@ namespace org.cloudbus.cloudsim
 		/// <seealso cref= #getCloudletTotalLength() }
 		/// @pre cloudletLength > 0
 		/// @post $none </seealso>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public boolean setCloudletLength(final long cloudletLength)
 		public virtual bool setCloudletLength(long cloudletLength)
 		{
 			if (cloudletLength <= 0)
@@ -536,8 +524,6 @@ namespace org.cloudbus.cloudsim
 		/// 
 		/// @todo The name of the setter is inconsistent with the attribute name,
 		/// what might be misinterpreted by other developers. </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public boolean setNetServiceLevel(final int netServiceLevel)
 		public virtual bool setNetServiceLevel(int netServiceLevel)
 		{
 			bool success = false;
@@ -584,8 +570,6 @@ namespace org.cloudbus.cloudsim
 				}
     
 				// use the latest resource submission time
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final double subTime = resList.get(index).submissionTime;
 				double subTime = resList[index].submissionTime;
 				return execStartTime - subTime;
 			}
@@ -600,8 +584,6 @@ namespace org.cloudbus.cloudsim
 		/// 
 		/// @pre classType > 0
 		/// @post $none </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public boolean setClassType(final int classType)
 		public virtual bool setClassType(int classType)
 		{
 			bool success = false;
@@ -640,8 +622,6 @@ namespace org.cloudbus.cloudsim
 		/// 
 		/// @pre numPE > 0
 		/// @post $none </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public boolean setNumberOfPes(final int numberOfPes)
 		public virtual bool setNumberOfPes(int numberOfPes)
 		{
 			if (numberOfPes > 0)
@@ -711,8 +691,6 @@ namespace org.cloudbus.cloudsim
 					return cloudletLength;
 				}
     
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final long finish = resList.get(index).finishedSoFar;
 				long finish = resList[index].finishedSoFar;
 				if (finish > cloudletLength)
 				{
@@ -729,8 +707,6 @@ namespace org.cloudbus.cloudsim
 					return;
 				}
     
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Resource res = resList.get(index);
 				Resource res = resList[index];
 				res.finishedSoFar = value;
     
@@ -760,11 +736,7 @@ namespace org.cloudbus.cloudsim
 				bool completed = false;
     
 				// if result is 0 or -ve then this Cloudlet has finished
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final long finish = resList.get(index).finishedSoFar;
 				long finish = resList[index].finishedSoFar;
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final long result = cloudletLength - finish;
 				long result = cloudletLength - finish;
 				if (result <= 0.0)
 				{
@@ -783,8 +755,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="id"> the user ID
 		/// @pre id >= 0
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void setUserId(final int id)
 		public virtual int UserId
 		{
 			set
@@ -864,12 +834,8 @@ namespace org.cloudbus.cloudsim
 		/// @pre resourceID >= 0
 		/// @pre cost > 0.0
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void setResourceParameter(final int resourceID, final double cost)
 		public virtual void setResourceParameter(int resourceID, double cost)
 		{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Resource res = new Resource();
 			Resource res = new Resource();
 			res.resourceId = resourceID;
 			res.costPerSec = cost;
@@ -884,11 +850,7 @@ namespace org.cloudbus.cloudsim
 			}
 			else if (record)
 			{
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int id = resList.get(index).resourceId;
 				int id = resList[index].resourceId;
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String name = resList.get(index).resourceName;
 				string name = resList[index].resourceName;
 				write("Moves Cloudlet from " + name + " (ID #" + id + ") to " + res.resourceName + " (ID #" + resourceID + ") with cost = $" + cost + "/sec");
 			}
@@ -902,8 +864,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="clockTime"> the submission time
 		/// @pre clockTime >= 0.0
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void setSubmissionTime(final double clockTime)
 		public virtual double SubmissionTime
 		{
 			set
@@ -913,8 +873,6 @@ namespace org.cloudbus.cloudsim
 					return;
 				}
     
-	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final Resource res = resList.get(index);
 				Resource res = resList[index];
 				res.submissionTime = value;
     
@@ -945,8 +903,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="clockTime"> the latest execution start time
 		/// @pre clockTime >= 0.0
 		/// @post $none </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void setExecStartTime(final double clockTime)
 		public virtual double ExecStartTime
 		{
 			set
@@ -981,8 +937,6 @@ namespace org.cloudbus.cloudsim
 		/// @pre wallTime >= 0.0
 		/// @pre actualTime >= 0.0
 		/// @post $none </seealso>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void setExecParam(final double wallTime, final double actualTime)
 		public virtual void setExecParam(double wallTime, double actualTime)
 		{
 			if (wallTime < 0.0 || actualTime < 0.0 || index < 0)
@@ -990,8 +944,6 @@ namespace org.cloudbus.cloudsim
 				return;
 			}
 
-//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Resource res = resList.get(index);
 			Resource res = resList[index];
 			res.wallClockTime = wallTime;
 			res.actualCPUTime = actualTime;
@@ -1013,9 +965,6 @@ namespace org.cloudbus.cloudsim
         /// post $none
         /// 
         /// @todo It has to throw an specific (unckecked) exception </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public void setCloudletStatus(final int newStatus) throws Exception
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
         public virtual int CloudletStatus
         {
             set
@@ -1074,8 +1023,6 @@ namespace org.cloudbus.cloudsim
         /// status code is unknown
         /// @pre $none
         /// @post $none </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public static String getStatusString(final int status)
         public static string getStatusString(int status)
         {
             string statusString = null;
@@ -1218,8 +1165,6 @@ namespace org.cloudbus.cloudsim
         {
             get
             {
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final int size = resList.size();
                 int size = resList.Count;
                 string[] data = null;
 
@@ -1246,8 +1191,6 @@ namespace org.cloudbus.cloudsim
         {
             get
             {
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final int size = resList.size();
                 int size = resList.Count;
                 int[] data = null;
 
@@ -1273,8 +1216,6 @@ namespace org.cloudbus.cloudsim
         /// <tt>0.0</tt> if not found
         /// @pre resId >= 0
         /// @post $result >= 0.0 </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getActualCPUTime(final int resId)
         public virtual double getActualCPUTime(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1293,8 +1234,6 @@ namespace org.cloudbus.cloudsim
         /// not found
         /// @pre resId >= 0
         /// @post $result >= 0.0 </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getCostPerSec(final int resId)
         public virtual double getCostPerSec(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1315,8 +1254,6 @@ namespace org.cloudbus.cloudsim
         /// length if it is completed or <tt>0.0</tt> if not found
         /// @pre resId >= 0
         /// @post $result >= 0.0 </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public long getCloudletFinishedSoFar(final int resId)
         public virtual long getCloudletFinishedSoFar(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1335,8 +1272,6 @@ namespace org.cloudbus.cloudsim
         /// <returns> the submission time or <tt>0.0</tt> if not found
         /// @pre resId >= 0
         /// @post $result >= 0.0 </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getSubmissionTime(final int resId)
         public virtual double getSubmissionTime(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1356,8 +1291,6 @@ namespace org.cloudbus.cloudsim
         /// <tt>0.0</tt> if not found
         /// @pre resId >= 0
         /// @post $result >= 0.0 </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getWallClockTime(final int resId)
         public virtual double getWallClockTime(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1375,8 +1308,6 @@ namespace org.cloudbus.cloudsim
         /// <returns> the CloudResource name or <tt>null</tt> if not found
         /// @pre resId >= 0
         /// @post $none </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public String getResourceName(final int resId)
         public virtual string getResourceName(int resId)
         {
             Resource resource = getResourceById(resId);
@@ -1392,8 +1323,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="resourceId"> the resource id </param>
         /// <returns> the resource by id </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public Resource getResourceById(final int resourceId)
         protected virtual Resource getResourceById(int resourceId)
         {
             foreach (Resource resource in resList)
@@ -1428,8 +1357,6 @@ namespace org.cloudbus.cloudsim
         /// <param name="str"> a history transaction of this Cloudlet
         /// @pre str != null
         /// @post $none </param>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: protected void write(final String str)
         protected internal virtual void write(string str)
         {
             if (!record)
@@ -1541,8 +1468,6 @@ namespace org.cloudbus.cloudsim
         /// @pre resourceID >= 0
         /// @pre cost > 0.0
         /// @post $none </param>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public void setResourceParameter(final int resourceID, final double costPerCPU, final double costPerBw)
         public virtual void setResourceParameter(int resourceID, double costPerCPU, double costPerBw)
         {
             setResourceParameter(resourceID, costPerCPU);
@@ -1596,8 +1521,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="fileName"> the required filename </param>
         /// <returns> <tt>true</tt> if succesful, <tt>false</tt> otherwise </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public boolean addRequiredFile(final String fileName)
         public virtual bool addRequiredFile(string fileName)
         {
             // if the list is empty
@@ -1610,8 +1533,6 @@ namespace org.cloudbus.cloudsim
             bool result = false;
             for (int i = 0; i < RequiredFiles.Count; i++)
             {
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final String temp = getRequiredFiles().get(i);
                 string temp = RequiredFiles[i];
                 if (temp.Equals(fileName))
                 {
@@ -1633,8 +1554,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="filename"> the given filename to be deleted </param>
         /// <returns> <tt>true</tt> if succesful, <tt>false</tt> otherwise </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public boolean deleteRequiredFile(final String filename)
         public virtual bool deleteRequiredFile(string filename)
         {
             bool result = false;
@@ -1645,8 +1564,6 @@ namespace org.cloudbus.cloudsim
 
             for (int i = 0; i < RequiredFiles.Count; i++)
             {
-                //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-                //ORIGINAL LINE: final String temp = getRequiredFiles().get(i);
                 string temp = RequiredFiles[i];
 
                 if (temp.Equals(filename))
@@ -1732,8 +1649,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="time"> the time </param>
         /// <returns> the utilization of cpu </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getUtilizationOfCpu(final double time)
         public virtual double getUtilizationOfCpu(double time)
         {
             return UtilizationModelCpu.getUtilization(time);
@@ -1744,8 +1659,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="time"> the time </param>
         /// <returns> the utilization of memory </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getUtilizationOfRam(final double time)
         public virtual double getUtilizationOfRam(double time)
         {
             return UtilizationModelRam.getUtilization(time);
@@ -1756,8 +1669,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// <param name="time"> the time </param>
         /// <returns> the utilization of bw </returns>
-        //JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-        //ORIGINAL LINE: public double getUtilizationOfBw(final double time)
         public virtual double getUtilizationOfBw(double time)
         {
             return UtilizationModelBw.getUtilization(time);

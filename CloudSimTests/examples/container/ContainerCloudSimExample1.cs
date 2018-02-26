@@ -175,11 +175,11 @@ namespace org.cloudbus.cloudsim.examples.container
                 /// </summary>
                 CloudSim.terminateSimulation(86400.00);
                 /// <summary>
-                /// 13- Starting the simualtion.
+                /// 13- Starting the simulation.
                 /// </summary>
                 CloudSim.startSimulation();
                 /// <summary>
-                /// 14- Stopping the simualtion.
+                /// 14- Stopping the simulation.
                 /// </summary>
                 CloudSim.stopSimulation();
                 /// <summary>
@@ -417,7 +417,15 @@ namespace org.cloudbus.cloudsim.examples.container
                         try
                         {
                             //cloudlet = new ContainerCloudlet(IDs.pollId(typeof(ContainerCloudlet)), ConstantsExamples.CLOUDLET_LENGTH, 1, fileSize, outputSize, new UtilizationModelPlanetLabInMemoryExtended(files[i].AbsolutePath, 300.0D), utilizationModelNull, utilizationModelNull);
-                            cloudlet = new ContainerCloudlet(IDs.pollId(typeof(ContainerCloudlet)), ConstantsExamples.CLOUDLET_LENGTH, 1, fileSize, outputSize, new UtilizationModelPlanetLabInMemoryExtended("FUBAR", 300.0D), utilizationModelNull, utilizationModelNull);
+                            cloudlet = new ContainerCloudlet(
+                                IDs.pollId(typeof(ContainerCloudlet)),
+                                ConstantsExamples.CLOUDLET_LENGTH,
+                                1,
+                                fileSize,
+                                outputSize,
+                                new UtilizationModelPlanetLabInMemoryExtended(@".\resources\146-179_surfsnel_dsl_internl_net_colostate_557.dat", 300.0D),
+                                utilizationModelNull,
+                                utilizationModelNull);
                         }
                         catch (Exception var13)
                         {

@@ -46,8 +46,6 @@ namespace org.cloudbus.cloudsim.core
 		/// @todo The use of Exception is not recommended. Specific exceptions
 		/// would be thrown (such as <seealso cref="IllegalArgumentException"/>)
 		/// or <seealso cref="RuntimeException"/> </seealso>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public CloudSimShutdown(String name, int numUser) throws Exception
 		public CloudSimShutdown(string name, int numUser) : base(name)
 		{
 			// NOTE: This entity doesn't use any I/O port.

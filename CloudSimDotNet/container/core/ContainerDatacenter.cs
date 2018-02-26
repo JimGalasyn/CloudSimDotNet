@@ -53,14 +53,10 @@ namespace org.cloudbus.cloudsim.container.core
         /// <summary>
         /// The vm list.
         /// </summary>
-        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: private java.util.List<? extends ContainerVm> containerVmList;
         private IList<ContainerVm> containerVmList;
         /// <summary>
         /// The container list.
         /// </summary>
-        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: private java.util.List<? extends Container> containerList;
         private IList<Container> containerList;
 
         /// <summary>
@@ -88,8 +84,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// <param name="experimentName"> </param>
         /// <param name="logAddress"> </param>
         /// <exception cref="Exception"> </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public ContainerDatacenter(String name, ContainerDatacenterCharacteristics characteristics, org.cloudbus.cloudsim.container.resourceAllocators.ContainerVmAllocationPolicy vmAllocationPolicy, org.cloudbus.cloudsim.container.resourceAllocators.ContainerAllocationPolicy containerAllocationPolicy, java.util.List<Storage> storageList, double schedulingInterval, String experimentName, String logAddress) throws Exception
         public ContainerDatacenter(
             string name,
             ContainerDatacenterCharacteristics characteristics,
@@ -602,8 +596,6 @@ namespace org.cloudbus.cloudsim.container.core
         protected internal virtual void processVmMigrate(SimEvent ev, bool ack)
         {
             object tmp = ev.Data;
-            //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-            //ORIGINAL LINE: if (!(tmp instanceof java.util.Map<?, ?>))
             // TEST: (fixed) Is this check necessary?
             //if (!(tmp is IDictionary<object, ?>))
             //{
@@ -614,8 +606,6 @@ namespace org.cloudbus.cloudsim.container.core
                 throw new ArgumentException("The data object must be Dictionary<String, Object>", "ev.Data");
             }
 
-            //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-            //ORIGINAL LINE: @SuppressWarnings("unchecked") java.util.Map<String, Object> migrate = (java.util.HashMap<String, Object>) tmp;
             IDictionary<string, object> migrate = (Dictionary<string, object>)tmp;
 
             ContainerVm containerVm = (ContainerVm)migrate["vm"];
@@ -663,8 +653,6 @@ namespace org.cloudbus.cloudsim.container.core
         {
 
             object tmp = ev.Data;
-            //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-            //ORIGINAL LINE: if (!(tmp instanceof java.util.Map<?, ?>))
             // TEST: (fixed) Is this check necessary?
             //if (!(tmp is IDictionary<object, ?>))
             //{
@@ -675,8 +663,6 @@ namespace org.cloudbus.cloudsim.container.core
                 throw new ArgumentException("The data object must be Dictionary<String, Object>", "ev.Data");
             }
 
-            //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-            //ORIGINAL LINE: @SuppressWarnings("unchecked") java.util.Map<String, Object> migrate = (java.util.HashMap<String, Object>) tmp;
             IDictionary<string, object> migrate = (Dictionary<string, object>)tmp;
 
             Container container = (Container)migrate["container"];
@@ -1102,8 +1088,6 @@ namespace org.cloudbus.cloudsim.container.core
             // simulation step is skipped and schedulers are not properly initialized
             if (CloudSim.clock() < 0.111 || CloudSim.clock() > LastProcessTime + CloudSim.MinTimeBetweenEvents)
             {
-                //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-                //ORIGINAL LINE: java.util.List<? extends ContainerHost> list = getVmAllocationPolicy().getContainerHostList();
                 IList<ContainerHost> list = VmAllocationPolicy.ContainerHostListProperty;
                 double smallerTime = double.MaxValue;
                 // for each host...
@@ -1140,8 +1124,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         protected internal virtual void checkCloudletCompletion()
         {
-            //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-            //ORIGINAL LINE: java.util.List<? extends ContainerHost> list = getVmAllocationPolicy().getContainerHostList();
             IList<ContainerHost> list = VmAllocationPolicy.ContainerHostListProperty;
             for (int i = 0; i < list.Count; i++)
             {
@@ -1305,13 +1287,11 @@ namespace org.cloudbus.cloudsim.container.core
         /// Gets the host list.
         /// </summary>
         /// <returns> the host list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ContainerHost> java.util.List<T> HostListProperty()
         public virtual IList<ContainerHost> HostListProperty
         {
             get
             {
-                return (IList<ContainerHost>)Characteristics.HostListProperty;
+                return Characteristics.HostListProperty;
             }
         }
 
@@ -1404,9 +1384,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// Gets the vm list.
         /// </summary>
         /// <returns> the vm list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ContainerVm> java.util.List<T> getContainerVmList()
-        //public virtual IList<T> getContainerVmList<T>() where T : ContainerVm
         public IList<ContainerVm> ContainerVmListProperty
         {
             get

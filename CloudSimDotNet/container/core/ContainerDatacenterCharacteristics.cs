@@ -11,7 +11,6 @@ namespace org.cloudbus.cloudsim.container.core
 	/// </summary>
 	public class ContainerDatacenterCharacteristics
 	{
-
 		/// <summary>
 		/// The resource id -- setup when Resource is created.
 		/// </summary>
@@ -30,8 +29,6 @@ namespace org.cloudbus.cloudsim.container.core
 		/// <summary>
 		/// The host list.
 		/// </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<? extends ContainerHost> hostList;
 		private IList<ContainerHost> hostList;
 
 		/// <summary>
@@ -533,9 +530,6 @@ namespace org.cloudbus.cloudsim.container.core
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the host list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ContainerHost> java.util.List<T> HostListProperty()
-        //public virtual IList<T> HostListProperty<T>() where T : ContainerHost
         public virtual IList<ContainerHost> HostListProperty
         {
 			get

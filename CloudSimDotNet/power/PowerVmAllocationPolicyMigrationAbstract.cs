@@ -124,8 +124,6 @@ namespace org.cloudbus.cloudsim.power
 			saveAllocation();
 
 			ExecutionTimeMeasurer.start("optimizeAllocationVmSelection");
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends org.cloudbus.cloudsim.Vm> vmsToMigrate = getVmsToMigrateFromHosts(overUtilizedHosts);
 			IList<Vm> vmsToMigrate = getVmsToMigrateFromHosts(overUtilizedHosts);
 			ExecutionTimeHistoryVmSelection.Add(ExecutionTimeMeasurer.end("optimizeAllocationVmSelection"));
 
@@ -190,8 +188,6 @@ namespace org.cloudbus.cloudsim.power
 				excludedHostsForFindingUnderUtilizedHost.Add(underUtilizedHost);
 				excludedHostsForFindingNewVmPlacement.Add(underUtilizedHost);
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends org.cloudbus.cloudsim.Vm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				IList<Vm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				if (vmsToMigrateFromUnderUtilizedHost.Count == 0)
 				{
@@ -400,8 +396,6 @@ namespace org.cloudbus.cloudsim.power
 		/// </summary>
 		/// <param name="overUtilizedHosts"> the over utilized hosts </param>
 		/// <returns> the VMs to migrate from hosts </returns>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends org.cloudbus.cloudsim.Vm> getVmsToMigrateFromHosts(java.util.List<PowerHostUtilizationHistory> overUtilizedHosts)
 		protected internal virtual IList<Vm> getVmsToMigrateFromHosts(IList<PowerHostUtilizationHistory> overUtilizedHosts)
 		{
 			IList<Vm> vmsToMigrate = new List<Vm>();
@@ -430,8 +424,6 @@ namespace org.cloudbus.cloudsim.power
 		/// </summary>
 		/// <param name="host"> the host </param>
 		/// <returns> the vms to migrate from under utilized host </returns>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends org.cloudbus.cloudsim.Vm> getVmsToMigrateFromUnderUtilizedHost(PowerHost host)
 		protected internal virtual IList<Vm> getVmsToMigrateFromUnderUtilizedHost(PowerHost host)
 		{
 			IList<Vm> vmsToMigrate = new List<Vm>();

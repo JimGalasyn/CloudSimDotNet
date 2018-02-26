@@ -30,8 +30,6 @@ namespace org.cloudbus.cloudsim.power.models
 	/// </summary>
 	public abstract class PowerModelSpecPower : PowerModel
 	{
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: @Override public double getPower(double utilization) throws IllegalArgumentException
 		public virtual double getPower(double utilization)
 		{
 			if (utilization < 0 || utilization > 1)

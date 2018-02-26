@@ -110,8 +110,6 @@ namespace org.cloudbus.cloudsim.examples.container
             }
         }
 
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: protected void initLogOutput(boolean enableOutput, boolean outputToFile, String outputFolder, String vmAllocationPolicy, String vmSelectionPolicy, String containerSelectionPolicy, String hostSelectionPolicy) throws IOException, FileNotFoundException
         protected internal virtual void initLogOutput(bool enableOutput, bool outputToFile, string outputFolder, string vmAllocationPolicy, string vmSelectionPolicy, string containerSelectionPolicy, string hostSelectionPolicy)
         {
             this.EnableOutput = enableOutput;

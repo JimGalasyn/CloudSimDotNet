@@ -39,8 +39,6 @@ namespace org.cloudbus.cloudsim.power
 		/// </summary>
 		/// <param name="name"> the name of the broker </param>
 		/// <exception cref="Exception"> the exception </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public PowerDatacenterBroker(String name) throws Exception
 		public PowerDatacenterBroker(string name) : base(name)
 		{
 		}

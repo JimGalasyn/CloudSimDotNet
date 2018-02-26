@@ -93,7 +93,7 @@ namespace org.cloudbus.cloudsim.examples.network
             long outputSize = 300;
             UtilizationModel utilizationModel = new UtilizationModelFull();
 
-            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet1.UserId = brokerId;
 
             //add the cloudlet to the list
@@ -124,8 +124,8 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(testCloudlet.CloudletId, 0);
             Assert.AreEqual(testCloudlet.ResourceId, 2);
             Assert.AreEqual(testCloudlet.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet.ActualCPUTime - 160) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet.ExecStartTime - 50.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet.SubmissionTime - 50.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet.FinishTime - 210.1) <= 0.01);
         }
 

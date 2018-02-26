@@ -80,7 +80,7 @@ namespace org.cloudbus.cloudsim.examples
 
             for (int i = 0; i < cloudlets; i++)
             {
-                cloudlet[i] = new Cloudlet(i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+                cloudlet[i] = new Cloudlet(i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
                 // setting the owner of these Cloudlets
                 cloudlet[i].UserId = userId;
                 // TODO: Figure out list.AddLast
@@ -136,6 +136,63 @@ namespace org.cloudbus.cloudsim.examples
 
                 // TODO: TEST: Convert to proper test.
                 printCloudletList(newList);
+
+
+                //                ========== OUTPUT ==========
+                //Cloudlet ID STATUS    Data center ID VM ID Time    Start Time    Finish Time
+                //     4        SUCCESS        2            4            3        0.2            3.2
+                //    16        SUCCESS        2            4            3        0.2            3.2
+                //    28        SUCCESS        2            4            3        0.2            3.2
+                //     5        SUCCESS        2            5            3        0.2            3.2
+                //    17        SUCCESS        2            5            3        0.2            3.2
+                //    29        SUCCESS        2            5            3        0.2            3.2
+                //     6        SUCCESS        3            6            3        0.2            3.2
+                //    18        SUCCESS        3            6            3        0.2            3.2
+                //    30        SUCCESS        3            6            3        0.2            3.2
+                //     7        SUCCESS        3            7            3        0.2            3.2
+                //    19        SUCCESS        3            7            3        0.2            3.2
+                //    31        SUCCESS        3            7            3        0.2            3.2
+                //     8        SUCCESS        3            8            3        0.2            3.2
+                //    20        SUCCESS        3            8            3        0.2            3.2
+                //    32        SUCCESS        3            8            3        0.2            3.2
+                //    10        SUCCESS        3            10           3        0.2            3.2
+                //    22        SUCCESS        3            10           3        0.2            3.2
+                //    34        SUCCESS        3            10           3        0.2            3.2
+                //     9        SUCCESS        3            9            3        0.2            3.2
+                //    21        SUCCESS        3            9            3        0.2            3.2
+                //    33        SUCCESS        3            9            3        0.2            3.2
+                //    11        SUCCESS        3            11           3        0.2            3.2
+                //    23        SUCCESS        3            11           3        0.2            3.2
+                //    35        SUCCESS        3            11           3        0.2            3.2
+                //     0        SUCCESS        2            0            4        0.2            4.2
+                //    12        SUCCESS        2            0            4        0.2            4.2
+                //    24        SUCCESS        2            0            4        0.2            4.2
+                //    36        SUCCESS        2            0            4        0.2            4.2
+                //     1        SUCCESS        2            1            4        0.2            4.2
+                //    13        SUCCESS        2            1            4        0.2            4.2
+                //    25        SUCCESS        2            1            4        0.2            4.2
+                //    37        SUCCESS        2            1            4        0.2            4.2
+                //     2        SUCCESS        2            2            4        0.2            4.2
+                //    14        SUCCESS        2            2            4        0.2            4.2
+                //    26        SUCCESS        2            2            4        0.2            4.2
+                //    38        SUCCESS        2            2            4        0.2            4.2
+                //     3        SUCCESS        2            3            4        0.2            4.2
+                //    15        SUCCESS        2            3            4        0.2            4.2
+                //    27        SUCCESS        2            3            4        0.2            4.2
+                //    39        SUCCESS        2            3            4        0.2            4.2
+
+                foreach(var testCloudlet in newList)
+                {
+                    Assert.AreEqual(testCloudlet.CloudletStatus, Cloudlet.SUCCESS);
+                    //Assert.AreEqual(testCloudlet.CloudletId, 0);
+                    //Assert.AreEqual(testCloudlet.ResourceId, 2);
+                    //Assert.AreEqual(testCloudlet.VmId, 0);
+                    Assert.IsTrue(Math.Abs(testCloudlet.WallClockTime - 3) <= 0.01 ||
+                        Math.Abs(testCloudlet.WallClockTime - 4) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.SubmissionTime - 0.2) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.FinishTime - 3.2) <= 0.01 ||
+                        Math.Abs(testCloudlet.FinishTime - 4.2) <= 0.01);
+                }
 
                 Log.printLine("CloudSimExample6 finished!");
             }

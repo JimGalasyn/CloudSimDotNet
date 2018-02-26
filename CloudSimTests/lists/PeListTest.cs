@@ -27,13 +27,6 @@ namespace org.cloudbus.cloudsim.lists
 
 		private IList<Pe> peList;
 
-		//public virtual void setUp()
-		//{
-		//	peList = new List<Pe>();
-		//	peList.Add(new Pe(0, new PeProvisionerSimple(MIPS)));
-		//	peList.Add(new Pe(1, new PeProvisionerSimple(MIPS)));
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

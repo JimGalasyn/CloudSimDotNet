@@ -99,11 +99,11 @@ namespace org.cloudbus.cloudsim.examples.network
             long outputSize = 300;
             UtilizationModel utilizationModel = new UtilizationModelFull();
 
-            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet1.UserId = brokerId;
 
             id++;
-            Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet2.UserId = brokerId;
 
             //add the cloudlets to the list
@@ -122,7 +122,7 @@ namespace org.cloudbus.cloudsim.examples.network
 
             //Sixth step: configure network
             //load the network topology file
-            await NetworkTopology.buildNetworkTopology(@".\examples\network\topology.brite");
+            await NetworkTopology.buildNetworkTopology(@".\resources\topology.brite");
 
             //maps CloudSim entities to BRITE entities
             //Datacenter0 will correspond to BRITE node 0
@@ -157,8 +157,8 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(testCloudlet1.CloudletId, 0);
             Assert.AreEqual(testCloudlet1.ResourceId, 2);
             Assert.AreEqual(testCloudlet1.VmId, 0);
-            Assert.AreEqual(testCloudlet1.ActualCPUTime, 160);
-            Assert.AreEqual(testCloudlet1.ExecStartTime, 21.8);
+            Assert.IsTrue(Math.Abs(testCloudlet1.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.SubmissionTime - 21.8) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet1.FinishTime - 181.8) <= 0.01);
 
             var testCloudlet2 = newList[1];
@@ -166,8 +166,8 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(testCloudlet2.CloudletId, 1);
             Assert.AreEqual(testCloudlet2.ResourceId, 2);
             Assert.AreEqual(testCloudlet2.VmId, 1);
-            Assert.AreEqual(testCloudlet2.ActualCPUTime, 160);
-            Assert.AreEqual(testCloudlet2.ExecStartTime, 21.8);
+            Assert.IsTrue(Math.Abs(testCloudlet2.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet2.SubmissionTime - 21.8) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet2.FinishTime - 181.8) <= 0.01);
         }
 

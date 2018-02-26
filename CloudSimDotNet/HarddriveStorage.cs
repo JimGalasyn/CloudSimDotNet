@@ -75,8 +75,6 @@ namespace org.cloudbus.cloudsim
 		/// <param name="name"> the name of the new hard drive storage </param>
 		/// <param name="capacity"> the capacity in MByte </param>
 		/// <exception cref="ParameterException"> when the name and the capacity are not valid </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HarddriveStorage(String name, double capacity) throws ParameterException
 		public HarddriveStorage(string name, double capacity)
 		{
 			if (string.ReferenceEquals(name, null) || name.Length == 0)
@@ -100,8 +98,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		/// <param name="capacity"> the capacity in MByte </param>
 		/// <exception cref="ParameterException"> when the capacity is not valid </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public HarddriveStorage(double capacity) throws ParameterException
 		public HarddriveStorage(double capacity)
 		{
 			if (capacity <= 0)

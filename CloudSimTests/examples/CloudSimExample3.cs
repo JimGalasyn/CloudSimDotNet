@@ -101,11 +101,11 @@ namespace org.cloudbus.cloudsim.examples
             long outputSize = 300;
             UtilizationModel utilizationModel = new UtilizationModelFull();
 
-            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet1.UserId = brokerId;
 
             id++;
-            Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet2.UserId = brokerId;
 
             //add the cloudlets to the list
@@ -140,8 +140,8 @@ namespace org.cloudbus.cloudsim.examples
             Assert.AreEqual(testCloudlet1.CloudletId, 1);
             Assert.AreEqual(testCloudlet1.ResourceId, 2);
             Assert.AreEqual(testCloudlet1.VmId, 1);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ActualCPUTime - 80) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet1.ExecStartTime - 0.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.WallClockTime - 80) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet1.SubmissionTime - 0.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet1.FinishTime - 80.1) <= 0.01);
 
             var testCloudlet0 = newList[1];
@@ -149,8 +149,8 @@ namespace org.cloudbus.cloudsim.examples
             Assert.AreEqual(testCloudlet0.CloudletId, 0);
             Assert.AreEqual(testCloudlet0.ResourceId, 2);
             Assert.AreEqual(testCloudlet0.VmId, 0);
-            Assert.IsTrue(Math.Abs(testCloudlet0.ActualCPUTime - 160) <= 0.01);
-            Assert.IsTrue(Math.Abs(testCloudlet0.ExecStartTime - 0.1) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet0.WallClockTime - 160) <= 0.01);
+            Assert.IsTrue(Math.Abs(testCloudlet0.SubmissionTime - 0.1) <= 0.01);
             Assert.IsTrue(Math.Abs(testCloudlet0.FinishTime - 160.1) <= 0.01);
         }
 

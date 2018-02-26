@@ -115,8 +115,6 @@ namespace org.cloudbus.cloudsim.power
 		/// </summary>
 		/// <param name="host"> the host </param>
 		/// <returns> the host CPU utilization percentage IQR </returns>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: protected double getHostUtilizationIqr(PowerHostUtilizationHistory host) throws IllegalArgumentException
 		protected internal virtual double getHostUtilizationIqr(PowerHostUtilizationHistory host)
 		{
 			double[] data = host.UtilizationHistory;

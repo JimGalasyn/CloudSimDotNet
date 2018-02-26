@@ -38,32 +38,22 @@ namespace org.cloudbus.cloudsim
 
 		/// <summary>
 		/// The list of cloudlet waiting to be executed on the VM. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends ResCloudlet> cloudletWaitingList;
 		protected internal IList<ResCloudlet> cloudletWaitingList;
 
 		/// <summary>
 		/// The list of cloudlets being executed on the VM. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends ResCloudlet> cloudletExecList;
 		protected internal IList<ResCloudlet> cloudletExecList;
 
 		/// <summary>
 		/// The list of paused cloudlets. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends ResCloudlet> cloudletPausedList;
 		protected internal IList<ResCloudlet> cloudletPausedList;
 
 		/// <summary>
 		/// The list of finished cloudlets. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends ResCloudlet> cloudletFinishedList;
 		protected internal IList<ResCloudlet> cloudletFinishedList;
 
 		/// <summary>
 		/// The list of failed cloudlets. </summary>
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.List<? extends ResCloudlet> cloudletFailedList;
 		protected internal IList<ResCloudlet> cloudletFailedList;
 
 		/// <summary>
@@ -290,9 +280,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet waiting list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ResCloudlet> java.util.List<T> getCloudletWaitingList()
-        //public virtual IList<T> getCloudletWaitingList<T>() where T : ResCloudlet
         public virtual IList<ResCloudlet> CloudletWaitingList
         {
 			get
@@ -311,9 +298,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet exec list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ResCloudlet> java.util.List<T> getCloudletExecList()
-        //public virtual IList<T> getCloudletExecList<T>() where T : ResCloudlet
         public virtual IList<ResCloudlet> CloudletExecList
         {
             get
@@ -332,8 +316,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		/// @param <T> the generic type </param>
 		/// <returns> the cloudlet paused list </returns>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ResCloudlet> java.util.List<T> getCloudletPausedList()
 		public virtual IList<ResCloudlet> CloudletPausedList
 		{
 			get
@@ -352,9 +334,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet finished list </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ResCloudlet> java.util.List<T> getCloudletFinishedList()
-        //public virtual IList<T> getCloudletFinishedList<T>() where T : ResCloudlet
         public virtual IList<ResCloudlet> CloudletFinishedList
         {
 			get
@@ -373,10 +352,6 @@ namespace org.cloudbus.cloudsim
         /// </summary>
         /// @param <T> the generic type </param>
         /// <returns> the cloudlet failed list. </returns>
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends ResCloudlet> java.util.List<T> getCloudletFailedList()
-        //public virtual IList<T> getCloudletFailedList<T>() where T : ResCloudlet
-
         public virtual IList<ResCloudlet> CloudletFailedList
 		{
 			get

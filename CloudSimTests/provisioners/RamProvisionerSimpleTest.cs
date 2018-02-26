@@ -24,11 +24,6 @@ namespace org.cloudbus.cloudsim.provisioners
 
 		private RamProvisionerSimple ramProvisioner;
 
-        //public virtual void setUp()
-        //{
-        //	ramProvisioner = new RamProvisionerSimple(RAM);
-        //}
-
         [TestInitialize()]
         public void Initialize()
         {

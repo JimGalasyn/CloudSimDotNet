@@ -38,10 +38,6 @@ namespace org.cloudbus.cloudsim.power.models
 		/// is critical for power consumption. </param>
 		/// <returns> the power consumption </returns>
 		/// <exception cref="IllegalArgumentException"> when the utilization percentage is not between [0 and 1] </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: double getPower(double utilization) throws IllegalArgumentException;
 		double getPower(double utilization);
-
 	}
-
 }

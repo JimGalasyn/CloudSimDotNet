@@ -90,8 +90,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		/// <param name="filename"> the filename </param>
 		/// <exception cref="Exception"> the exception </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void saveHistory(String filename) throws Exception
 		public virtual void saveHistory(string filename)
 		{
             // TODO: Actual file implementation.
@@ -106,9 +104,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		/// <param name="filename"> the filename </param>
 		/// <exception cref="Exception"> the exception </exception>
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public void loadHistory(String filename) throws Exception
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void loadHistory(string filename)
 		{
             // TODO: real IO

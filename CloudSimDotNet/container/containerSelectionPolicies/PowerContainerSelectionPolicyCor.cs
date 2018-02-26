@@ -23,20 +23,11 @@ namespace org.cloudbus.cloudsim.container.containerSelectionPolicies
 		/// Instantiates a new power container selection policy maximum correlation.
 		/// </summary>
 		/// <param name="fallbackPolicy"> the fallback policy </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerContainerSelectionPolicyCor(final org.cloudbus.cloudsim.container.containerSelectionPolicies.PowerContainerSelectionPolicy fallbackPolicy)
 		public PowerContainerSelectionPolicyCor(PowerContainerSelectionPolicy fallbackPolicy) : base()
 		{
 			FallbackPolicy = fallbackPolicy;
 		}
-
-		/*
-		* (non-Javadoc)
-		*
-		* @see PowerContainerSelectionPolicy#getContainerToMigrate
-		*/
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public org.cloudbus.cloudsim.container.core.Container getContainerToMigrate(final org.cloudbus.cloudsim.container.core.PowerContainerHost host)
+        
 		public override Container getContainerToMigrate(PowerContainerHost host)
 		{
 			IList<PowerContainer> migratableContainers = getMigratableContainers(host);

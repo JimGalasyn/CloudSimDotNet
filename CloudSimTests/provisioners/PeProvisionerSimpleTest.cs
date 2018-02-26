@@ -26,11 +26,6 @@ namespace org.cloudbus.cloudsim.provisioners
 
 		private PeProvisionerSimple peProvisioner;
         
-        //public virtual void setUp()
-		//{
-		//	peProvisioner = new PeProvisionerSimple(MIPS);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

@@ -79,7 +79,7 @@ namespace org.cloudbus.cloudsim.examples
 
             for (int i = 0; i < cloudlets; i++)
             {
-                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
                 // setting the owner of these Cloudlets
                 cloudlet[i].UserId = userId;
                 // TODO: TEST list.AddLast
@@ -200,6 +200,16 @@ namespace org.cloudbus.cloudsim.examples
                 //    3        SUCCESS        2            3            320        0.1            320.1
                 //    8        SUCCESS        2            3            320        0.1            320.1
 
+                foreach(var testCloudlet in newList)
+                {
+                    Assert.AreEqual(testCloudlet.CloudletStatus, Cloudlet.SUCCESS);
+                    //Assert.AreEqual(testCloudlet.CloudletId, 0);
+                    //Assert.AreEqual(testCloudlet.ResourceId, 2);
+                    //Assert.AreEqual(testCloudlet.VmId, 0);
+                    Assert.IsTrue(Math.Abs(testCloudlet.WallClockTime - 320) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.SubmissionTime - 0.1) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.FinishTime - 320.1) <= 0.01);
+                }
             }
             catch (Exception e)
             {

@@ -92,7 +92,7 @@ namespace org.cloudbus.cloudsim.examples.network
             long outputSize = 300;
             UtilizationModel utilizationModel = new UtilizationModelFull();
 
-            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+            Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
             cloudlet1.UserId = brokerId;
 
             //add the cloudlet to the list
@@ -103,8 +103,9 @@ namespace org.cloudbus.cloudsim.examples.network
 
             //Sixth step: configure network
             //load the network topology file
-            await NetworkTopology.buildNetworkTopology(@".\examples\network\topology.brite");
-
+            //await NetworkTopology.buildNetworkTopology(@".\examples\network\topology.brite");
+            await NetworkTopology.buildNetworkTopology(@".\resources\topology.brite");
+            
             //maps CloudSim entities to BRITE entities
             //PowerDatacenter will correspond to BRITE node 0
             int briteNode = 0;
@@ -132,9 +133,9 @@ namespace org.cloudbus.cloudsim.examples.network
             Assert.AreEqual(cloudlet.CloudletStatus, Cloudlet.SUCCESS);
             Assert.AreEqual(cloudlet.ResourceId, 2);
             Assert.AreEqual(cloudlet.VmId, 0);
-            Assert.AreEqual(cloudlet.ActualCPUTime, 160);
-            Assert.AreEqual(cloudlet.ExecStartTime, 19.6);
-            Assert.IsTrue(Math.Abs(cloudlet.FinishTime-179.6) <= 0.01);
+            Assert.AreEqual(cloudlet.WallClockTime, 160);
+            Assert.IsTrue(Math.Abs(cloudlet.SubmissionTime - 19.6) <= 0.01);
+            Assert.IsTrue(Math.Abs(cloudlet.FinishTime - 179.6) <= 0.01);
         }
 
         private static Datacenter createDatacenter(string name)

@@ -10,18 +10,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace org.cloudbus.cloudsim
 {
-
-//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.junit.Assert.assertEquals;
-//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.junit.Assert.assertFalse;
-//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.junit.Assert.assertTrue;
-
-
-	//using Before = org.junit.Before;
-	//using Test = org.junit.Test;
-
 	/// <summary>
 	/// @author		Anton Beloglazov
 	/// @since		CloudSim Toolkit 2.0
@@ -34,17 +22,11 @@ namespace org.cloudbus.cloudsim
         private static readonly string LINE_SEPARATOR = System.Environment.NewLine;
         //	private static readonly DecimalFormatSymbols dfs = DecimalFormatSymbols.getInstance(Locale.getDefault(Locale.Category.FORMAT));
 
-        //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-        //ORIGINAL LINE: @Before public void setUp() throws Exception
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
         public virtual void setUp()
 		{
 			Log.Output = OUTPUT;
 		}
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testPrint() throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void testPrint()
 		{
 			Log.print("test test");
@@ -68,9 +50,6 @@ namespace org.cloudbus.cloudsim
             //OUTPUT.reset();
         }
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testPrintLine() throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void testPrintLine()
 		{
 			Log.printLine("test test");
@@ -94,9 +73,6 @@ namespace org.cloudbus.cloudsim
             //OUTPUT.reset();
         }
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFormat() throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void testFormat()
 		{
 			Log.format("test %s test", "test");
@@ -120,9 +96,6 @@ namespace org.cloudbus.cloudsim
             //OUTPUT.reset();
         }
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testFormatLine() throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void testFormatLine()
 		{
 		    //OUTPUT.reset();
@@ -146,9 +119,6 @@ namespace org.cloudbus.cloudsim
 			//OUTPUT.reset();
 		}
 
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testDisable() throws java.io.IOException
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
 		public virtual void testDisable()
 		{
             //OUTPUT.reset();

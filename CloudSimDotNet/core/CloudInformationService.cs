@@ -63,8 +63,6 @@ namespace org.cloudbus.cloudsim.core
 		/// @todo The use of Exception is not recommended. Specific exceptions
 		/// would be thrown (such as <seealso cref="IllegalArgumentException"/>)
 		/// or <seealso cref="RuntimeException"/> </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public CloudInformationService(String name) throws Exception
 		public CloudInformationService(string name) : base(name)
 		{
 			//resList = new List<int?>();
@@ -347,9 +345,10 @@ namespace org.cloudbus.cloudsim.core
 		/// @post $none </param>
 		protected internal virtual void signalShutdown(ICollection<int?> list)
 		{
-			// checks whether a list is empty or not
-			if (list == null)
-			{
+            // checks whether a list is empty or not
+            //if (list == null)
+            if(list == null || list.Count == 0)
+            {
 				return;
 			}
 

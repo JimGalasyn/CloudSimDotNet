@@ -80,7 +80,7 @@ namespace org.cloudbus.cloudsim.examples
 
             for (int i = 0; i < cloudlets; i++)
             {
-                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+                cloudlet[i] = new Cloudlet(idShift + i, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel, true);
                 // setting the owner of these Cloudlets
                 cloudlet[i].UserId = userId;
                 // TODO: TEST list.AddLast(cloudlet[i]);
@@ -138,6 +138,43 @@ namespace org.cloudbus.cloudsim.examples
                 CloudSim.stopSimulation();
 
                 printCloudletList(newList);
+
+                //========== OUTPUT ==========
+                //Cloudlet ID STATUS    Data center ID VM ID Time    Start Time    Finish Time
+                //      0      SUCCESS        3          0    320        0.1            320.1
+                //      5      SUCCESS        3          0    320        0.1            320.1
+                //      1      SUCCESS        3          1    320        0.1            320.1
+                //      6      SUCCESS        3          1    320        0.1            320.1
+                //      2      SUCCESS        3          2    320        0.1            320.1
+                //      7      SUCCESS        3          2    320        0.1            320.1
+                //      4      SUCCESS        3          4    320        0.1            320.1
+                //      9      SUCCESS        3          4    320        0.1            320.1
+                //      3      SUCCESS        3          3    320        0.1            320.1
+                //      8      SUCCESS        3          3    320        0.1            320.1
+                //    101      SUCCESS        3        101    320        200.1            520.1
+                //    106      SUCCESS        3        101    320        200.1            520.1
+                //    103      SUCCESS        3        103    320        200.1            520.1
+                //    108      SUCCESS        3        103    320        200.1            520.1
+                //    100      SUCCESS        3        100    320        200.1            520.1
+                //    105      SUCCESS        3        100    320        200.1            520.1
+                //    102      SUCCESS        3        102    320        200.1            520.1
+                //    107      SUCCESS        3        102    320        200.1            520.1
+                //    104      SUCCESS        3        104    320        200.1            520.1
+                //    109      SUCCESS        3        104    320        200.1            520.1
+
+                foreach(var testCloudlet in newList)
+                {
+                    Assert.AreEqual(testCloudlet.CloudletStatus, Cloudlet.SUCCESS);
+                    //Assert.AreEqual(testCloudlet.CloudletId, 0);
+                    //Assert.AreEqual(testCloudlet.ResourceId, 2);
+                    //Assert.AreEqual(testCloudlet.VmId, 0);
+                    Assert.IsTrue(Math.Abs(testCloudlet.WallClockTime - 320) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.SubmissionTime - 0.1) <= 0.01 ||
+                        Math.Abs(testCloudlet.SubmissionTime - 200.1) <= 0.01);
+                    Assert.IsTrue(Math.Abs(testCloudlet.FinishTime - 320.1) <= 0.01 ||
+                        Math.Abs(testCloudlet.FinishTime - 520.1) <= 0.01);
+                }
+
 
                 Log.printLine("CloudSimExample8 finished!");
             }

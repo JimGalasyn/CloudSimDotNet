@@ -29,14 +29,6 @@ namespace org.cloudbus.cloudsim
 		private UtilizationModel utilizationModelRam;
 		private UtilizationModel utilizationModelBw;
 
-		//public virtual void setUp()
-		//{
-		//	utilizationModelCpu = new UtilizationModelStochastic();
-		//	utilizationModelRam = new UtilizationModelStochastic();
-		//	utilizationModelBw = new UtilizationModelStochastic();
-		//	cloudlet = new Cloudlet(0, CLOUDLET_LENGTH, PES_NUMBER, CLOUDLET_FILE_SIZE, CLOUDLET_OUTPUT_SIZE, utilizationModelCpu, utilizationModelRam, utilizationModelBw);
-		//}
-
         [TestInitialize()]
         public void Initialize()
         {

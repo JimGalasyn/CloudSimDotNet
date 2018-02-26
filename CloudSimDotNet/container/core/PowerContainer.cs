@@ -43,8 +43,6 @@ namespace org.cloudbus.cloudsim.container.core
 			/// <param name="vmm"> the vmm </param>
 			/// <param name="cloudletScheduler"> the cloudlet scheduler </param>
 			/// <param name="schedulingInterval"> the scheduling interval </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerContainer(final int id, final int userId, final double mips, final int pesNumber, final int ram, final long bw, final long size, final String vmm, final org.cloudbus.cloudsim.container.schedulers.ContainerCloudletScheduler cloudletScheduler, final double schedulingInterval)
 			public PowerContainer(int id, int userId, double mips, int pesNumber, int ram, long bw, long size, string vmm, ContainerCloudletScheduler cloudletScheduler, double schedulingInterval) : base(id, userId, mips, pesNumber, ram, bw, size, vmm, cloudletScheduler, schedulingInterval)
 			{
 			}
@@ -60,8 +58,6 @@ namespace org.cloudbus.cloudsim.container.core
 			/// 
 			/// @pre currentTime >= 0
 			/// @post $none </returns>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public double updateContainerProcessing(final double currentTime, final java.util.List<Nullable<double>> mipsShare)
 			public override double updateContainerProcessing(double currentTime, IList<double?> mipsShare)
 			{
 				double time = base.updateContainerProcessing(currentTime, mipsShare);
@@ -163,8 +159,6 @@ namespace org.cloudbus.cloudsim.container.core
 			/// Adds the utilization history value.
 			/// </summary>
 			/// <param name="utilization"> the utilization </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void addUtilizationHistoryValue(final double utilization)
 			public override void addUtilizationHistoryValue(double utilization)
 			{
 				UtilizationHistory.Insert(0, utilization);

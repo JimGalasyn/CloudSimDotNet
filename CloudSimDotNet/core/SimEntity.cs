@@ -114,7 +114,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="data"> The data to be sent with the event. </param>
 		public virtual void schedule(int dest, double delay, int tag, object data)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -215,7 +215,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="data"> The data to be sent with the event. </param>
 		public virtual void scheduleFirst(int dest, double delay, int tag, object data)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -318,7 +318,7 @@ namespace org.cloudbus.cloudsim.core
 			{
 				throw new System.ArgumentException("Negative delay supplied.");
 			}
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -351,7 +351,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the simulation event </returns>
 		public virtual SimEvent selectEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -366,7 +366,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> The number of events cancelled (0 or 1) </returns>
 		public virtual SimEvent cancelEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -382,7 +382,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <returns> the simulation event </returns>
 		public virtual SimEvent getNextEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return null;
 			}
@@ -400,7 +400,7 @@ namespace org.cloudbus.cloudsim.core
 		/// <param name="p"> The predicate to match </param>
 		public virtual void waitForEvent(Predicate p)
 		{
-			if (!CloudSim.running())
+			if (!CloudSim.Running)
 			{
 				return;
 			}
@@ -447,13 +447,13 @@ namespace org.cloudbus.cloudsim.core
 		/// </summary>
 		public abstract void shutdownEntity();
 
-			/// <summary>
-			/// The run loop to process events fired during the simulation.
-			/// The events that will be processed are defined
-			/// in the <seealso cref="#processEvent(org.cloudbus.cloudsim.core.SimEvent)"/> method.
-			/// </summary>
-			/// <seealso cref= #processEvent(org.cloudbus.cloudsim.core.SimEvent)  </seealso>
-		public virtual void run()
+        /// <summary>
+        /// The run loop to process events fired during the simulation.
+        /// The events that will be processed are defined
+        /// in the <seealso cref="processEvent(org.cloudbus.cloudsim.core.SimEvent)"/> method.
+        /// </summary>
+        /// <seealso cref= "processEvent(org.cloudbus.cloudsim.core.SimEvent)"/>
+        public virtual void run()
 		{
 			SimEvent ev = evbuf != null ? evbuf : NextEvent;
 
@@ -479,8 +479,6 @@ namespace org.cloudbus.cloudsim.core
         /// </summary>
         /// <returns> A clone of the entity </returns>
         /// <exception cref="CloneNotSupportedException"> when the entity doesn't support cloning </exception>
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: @Override protected final Object clone() throws CloneNotSupportedException
         //protected internal override object clone()
         public object Clone()
         {

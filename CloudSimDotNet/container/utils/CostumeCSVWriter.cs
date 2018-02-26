@@ -14,8 +14,6 @@
         internal string fileAddress;
 		//internal Writer fileWriter;
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public CostumeCSVWriter(String fileAddress) throws java.io.IOException
 		public CostumeCSVWriter(string fileAddress)
 		{
 			//File f = new File(fileAddress);
@@ -33,8 +31,6 @@
 
 		}
 
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public void writeTofile(String[] entries) throws java.io.IOException
 		public virtual void writeTofile(string[] entries)
 		{
 			// feed in your array (or convert your data to an array)

@@ -68,15 +68,11 @@ namespace org.cloudbus.cloudsim.power
 		/// <param name="vmm"> the vmm </param>
 		/// <param name="cloudletScheduler"> the cloudlet scheduler </param>
 		/// <param name="schedulingInterval"> the scheduling interval </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public PowerVm(final int id, final int userId, final double mips, final int pesNumber, final int ram, final long bw, final long size, final int priority, final String vmm, final org.cloudbus.cloudsim.CloudletScheduler cloudletScheduler, final double schedulingInterval)
 		public PowerVm(int id, int userId, double mips, int pesNumber, int ram, long bw, long size, int priority, string vmm, CloudletScheduler cloudletScheduler, double schedulingInterval) : base(id, userId, mips, pesNumber, ram, bw, size, vmm, cloudletScheduler)
 		{
 			SchedulingInterval = schedulingInterval;
 		}
 
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: @Override public double updateVmProcessing(final double currentTime, final java.util.List<Nullable<double>> mipsShare)
 		public override double updateVmProcessing(double currentTime, IList<double?> mipsShare)
 		{
 			double time = base.updateVmProcessing(currentTime, mipsShare);
@@ -178,8 +174,6 @@ namespace org.cloudbus.cloudsim.power
 		/// Adds a CPU utilization percentage history value.
 		/// </summary>
 		/// <param name="utilization"> the CPU utilization percentage to add </param>
-//JAVA TO C# CONVERTER WARNING: 'final' parameters are not available in .NET:
-//ORIGINAL LINE: public void addUtilizationHistoryValue(final double utilization)
 		public virtual void addUtilizationHistoryValue(double utilization)
 		{
 			UtilizationHistory.Insert(0, utilization);

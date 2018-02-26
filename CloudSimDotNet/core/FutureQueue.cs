@@ -23,7 +23,7 @@ namespace org.cloudbus.cloudsim.core
 	/// 
 	/// @todo It would be used a common interface for queues
 	/// such as this one and <seealso cref="DeferredQueue"/> </seealso>
-	public class FutureQueue : List<SimEvent>
+	public class FutureQueue //: List<SimEvent>
 	{
 
 		/// <summary>
@@ -74,12 +74,21 @@ namespace org.cloudbus.cloudsim.core
 			return sortedSet.Count;
 		}
 
-		/// <summary>
-		/// Removes the event from the queue.
-		/// </summary>
-		/// <param name="event"> the event </param>
-		/// <returns> true, if successful </returns>
-		public virtual bool remove(SimEvent @event)
+        public virtual int Count
+        {
+            get
+            {
+                return sortedSet.Count;
+            }
+        }
+
+
+        /// <summary>
+        /// Removes the event from the queue.
+        /// </summary>
+        /// <param name="event"> the event </param>
+        /// <returns> true, if successful </returns>
+        public virtual bool remove(SimEvent @event)
 		{
 			return sortedSet.Remove(@event);
 		}

@@ -67,8 +67,6 @@ namespace org.cloudbus.cloudsim
 		///             <li>the file name is empty or <tt>null</tt>
 		///             <li>the file size is zero or negative numbers
 		///             </ul> </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public File(String fileName, int fileSize) throws ParameterException
 		public File(string fileName, int fileSize)
 		{
 			if (string.ReferenceEquals(fileName, null) || fileName.Length == 0)
@@ -92,8 +90,6 @@ namespace org.cloudbus.cloudsim
 		/// </summary>
 		/// <param name="file"> the source file to create a copy and that will be set as a replica </param>
 		/// <exception cref="ParameterException"> This happens when the source file is <tt>null</tt> </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: public File(File file) throws ParameterException
 		public File(File file)
 		{
 			if (file == null)

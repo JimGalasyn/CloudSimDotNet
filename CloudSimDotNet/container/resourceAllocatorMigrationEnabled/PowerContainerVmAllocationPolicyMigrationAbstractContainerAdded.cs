@@ -68,8 +68,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 			saveAllocation();
 
 			ExecutionTimeMeasurer.start("optimizeAllocationContainerSelection");
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: List<? extends Container> containersToMigrate = getContainersToMigrateFromHosts(overUtilizedHosts);
 			IList<Container> containersToMigrate = getContainersToMigrateFromHosts(overUtilizedHosts);
 			ExecutionTimeHistoryVmSelection.Add(ExecutionTimeMeasurer.end("optimizeAllocationContainerSelection"));
 
@@ -88,12 +86,8 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 			ExecutionTimeHistoryTotal.Add(ExecutionTimeMeasurer.end("optimizeAllocationTotal"));
 
 			return migrationMap;
-
-
 		}
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected Collection<? extends Map<String, Object>> getContainerMigrationMapFromUnderUtilizedHosts(List<PowerContainerHostUtilizationHistory> overUtilizedHosts, List<Map<String, Object>> previouseMap)
 		protected internal virtual ICollection<IDictionary<string, object>> getContainerMigrationMapFromUnderUtilizedHosts(IList<PowerContainerHostUtilizationHistory> overUtilizedHosts, IList<IDictionary<string, object>> previouseMap)
 		{
 
@@ -135,8 +129,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 				excludedHostsForFindingUnderUtilizedHost.Add(underUtilizedHost);
 				excludedHostsForFindingNewContainerPlacement.Add(underUtilizedHost);
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: List<? extends ContainerVm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				IList<ContainerVm> vmsToMigrateFromUnderUtilizedHost = getVmsToMigrateFromUnderUtilizedHost(underUtilizedHost);
 				if (vmsToMigrateFromUnderUtilizedHost.Count == 0)
 				{
@@ -175,8 +167,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 			return migrationMap;
 		}
 
-//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private List<? extends Container> getContainersToMigrateFromHosts(List<PowerContainerHostUtilizationHistory> overUtilizedHosts)
 		private IList<Container> getContainersToMigrateFromHosts(IList<PowerContainerHostUtilizationHistory> overUtilizedHosts)
 		{
 			IList<Container> containersToMigrate = new List<Container>();
@@ -276,8 +266,7 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 
 			IList<IDictionary<string, object>> migrationMapUnderUtilized = findMapInUnderUtilizedHosts(underUtilizedHostList,containerList);
 			((List<IDictionary<string, object>>)newMigrationMap).AddRange(migrationMapUnderUtilized);
-            //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the java.util.Collection 'removeAll' method:
-            // TEST: (Fixed) Make sure this removeAll equivalent works.
+            // TODO: TEST: (Fixed) Make sure this removeAll equivalent works.
             //containerList.removeAll(getAssignedContainers(migrationMapUnderUtilized));
             containerList.RemoveAll<Container>(getAssignedContainers(migrationMapUnderUtilized));
             //containerList.Clear();
@@ -448,8 +437,7 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
                                 // TEST: (fixed) Make sure this cast works.
                                 switchedOffHostsList.Remove(previousHost as PowerContainerHost);
                                 previousHost = null;
-                                //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the java.util.Collection 'removeAll' method:
-                                // TEST: (fixed) RemoveAll
+                                // TODO: TEST: (fixed) RemoveAll
                                 //containerList.removeAll(assignedContainer);
                                 containerList.RemoveAll<Container>(assignedContainer);
 
@@ -464,7 +452,6 @@ namespace org.cloudbus.cloudsim.container.resourceAllocatorMigrationEnabled
 							migrate["vm"] = previousVm;
 							migrate["host"] = previousHost;
 							newMigrationMap.Add(migrate);
-
 						}
 					}
 

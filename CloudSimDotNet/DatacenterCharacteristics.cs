@@ -47,8 +47,6 @@ namespace org.cloudbus.cloudsim
 
         /// <summary>
         /// The hosts owned by the datacenter. </summary>
-        //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-        //ORIGINAL LINE: private java.util.List<? extends Host> hostList;
         private IList<Host> hostList;
         //private HostList hostList;
 
@@ -613,9 +611,6 @@ namespace org.cloudbus.cloudsim
     /// @param <T> the generic type </param>
     /// <returns> the host list
     /// @todo check this warning below </returns>
-    //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-    //ORIGINAL LINE: @SuppressWarnings("unchecked") public <T extends Host> java.util.List<T> HostListProperty()
-    //public virtual IList<T> HostListProperty<T>() where T : Host
     public virtual IList<Host> HostListProperty
     {
 			get
