@@ -3,7 +3,7 @@
 /*
  * Title:        CloudSim Toolkiimport static org.junit.Assert.Assert.AreEqual;
 (c) 2009-2010, The University of Melbourne, Australia
- fubar */
+ */
 
 namespace org.cloudbus.cloudsim
 {
